@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página del Circo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo-header">
+            <a href="index.html">
+                <img src="Imagenes/Logo.png" alt="Circo Maravillas">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="espectaculos.html">Espectáculos</a></li>
+                <li><a href="entradas.html">Entradas</a></li>
+                <li><a href="historia.html">Historia</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="https://www.figma.com/design/U7SxQtH8wjbMZym3ypb61p/Circo-Maravillas?node-id=4017-43" target="_blank" >Prototipo</a></li>
+                <li><a href="preguntasFrecuentes.html">Preguntas Frecuentes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <video autoplay muted loop playsinline>
+                <source src="Imagenes/background-avance.mp4" type="video/mp4">
+                Tu navegador no soporta el elemento de video.
+            </video>
+        </section>
+
+        <!-- Sección especial para espectáculos -->
+        <section class="carrusel-seccion">
+            <h2>Malabarista</h2>
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item">
+                        <img src="Imagenes/PallasoMalavarista2.webp" class="d-block w-100" alt="Foto 3">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="Imagenes/PallasoMalavarista1.jpg" class="d-block w-100" alt="Foto 4">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </section>
+
+        <section class="carrusel-seccion">
+            <h2>Hombre que Tira Fuego</h2>
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="Imagenes/HombreTiraFuego.webp" class="d-block w-100" alt="Foto 1">
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </section>
+
+        <section class="carrusel-seccion">
+            <h2>Cuerda Floja</h2>
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+
+                    <div class="carousel-item">
+                        <img src="Imagenes/CuerdaFloja1.webp" class="d-block w-100" alt="Foto 3">
+                    </div>
+      
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <p class="mb-0">Materia: Diseño y Desarrollo Web | Curso: 14016 | Grupo: 01</p>
+                    <p class="mb-0">© Todos los Derechos reservados - Sitio desarrollado para uso educativo - 2024</p>
+                </div>
+                <div class="col-md-4 text-md-end">
+                    <img src="Imagenes/uade.png" alt="Logo UADE" height="50">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

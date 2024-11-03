@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página del Circo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo-header">
+            <a href="index.html">
+                <img src="Imagenes/Logo.png" alt="Circo Maravillas">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="espectaculos.html">Espectáculos</a></li>
+                <li><a href="entradas.html">Entradas</a></li>
+                <li><a href="historia.html">Historia</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="https://www.figma.com/design/U7SxQtH8wjbMZym3ypb61p/Circo-Maravillas?node-id=4017-43" target="_blank" >Prototipo</a></li>
+                <li><a href="preguntasFrecuentes.html">Preguntas Frecuentes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contact">
+            <h2>Contacto</h2>
+    
+    
+            <div class="contacto-descripcion">
+                <p>Para más información, puedes contactarnos a través de los siguientes medios:</p>
+                <ul class="contact-info">
+                    <li><strong>Dirección:</strong> Lima 757, C1073 Cdad. Autónoma de Buenos Aires</li>
+                    <li><strong>Teléfono:</strong> +541576625199</li>
+                </ul>
+            </div>
+    
+          
+    
+    
+            <!-- Formulario de contacto -->
+            <form class="contact-form" onsubmit="alert('Mensaje enviado'); return false;">
+                <label for="name">Nombre</label>
+                <input type="text" id="name" name="name" required placeholder="Tu nombre">
+    
+                <label for="email">Correo electrónico</label>
+                <input type="email" id="email" name="email" required placeholder="Tu correo electrónico">
+    
+                <label for="subject">Asunto</label>
+                <input type="text" id="subject" name="subject" required placeholder="Asunto del mensaje">
+    
+                <label for="message">Mensaje</label>
+                <textarea id="message" name="message" required placeholder="Escribe tu mensaje aquí"></textarea>
+    
+                <button type="submit">Enviar mensaje</button>
+            </form>
+    
+    
+            <!-- Mapa insertado con iframe de Google Maps -->
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13133.961219384153!2d-58.3819186!3d-34.617048!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccaba6ac89b35%3A0x1a2dc24cbca665a7!2sUADE!5e0!3m2!1ses!2sar!4v1726943377086!5m2!1ses!2sar" 
+                        width="600" 
+                        height="450" 
+                        style="border:0;"
+                        allowfullscreen="" 
+                        loading="lazy" r
+                        eferrerpolicy="no-referrer-when-downgrade">
+    
+                </iframe>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>Materia: Diseño y Desarrollo Web &nbsp;&nbsp;|&nbsp;&nbsp; Curso: 14016 &nbsp;&nbsp;|&nbsp;&nbsp; Grupo: 01</p>
+            <p>© Todos los Derechos reservados - Sitio desarrollado para uso educativo - 2024</p>
+        </div>
+        <div class="logo">
+            <img src="Imagenes/uade.png" alt="Logo UADE">
+        </div>
+    </footer>
+</body>
+</html>

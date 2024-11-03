@@ -1,0 +1,392 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rum+Raisin&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: white;
+    overflow-x: hidden;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.logo-header img {
+    height: 70px;
+    margin: 10px 0px 10px 25px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    font-family: "Bebas Neue";
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+
+.hero {
+    position: relative;
+    height: 100vh; /* Ocupa toda la altura de la pantalla */
+    width: 100%;
+    overflow: hidden; /* Asegura que no haya barras de desplazamiento por el video */
+}
+
+.hero video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: -1;
+}
+
+
+
+
+
+footer {
+    position: relative; /* Cambiado de absolute a relative */
+    bottom: 0; /* Esto puede ser opcional */
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Ajusta el último valor para cambiar la transparencia */
+}
+
+
+.footer-content {
+    font-size: 14px;
+    text-align: left;
+}
+
+footer .logo img {
+    height: 65px;
+}
+
+/*INICIO*/
+
+
+/* Estilo para la sección Introducción */
+.introduccion {
+    background-color: #E9E9E9; /* Fondo claro */
+    padding: 40px 20px; /* Espaciado interno */
+    text-align: center; /* Centrar texto */
+}
+
+.introduccion h2 {
+    color: #6650F2; /* Color del título */
+    margin-bottom: 20px; /* Espaciado debajo del título */
+}
+
+.introduccion p {
+    font-size: 1.1rem; /* Tamaño de fuente */
+    color: #333; /* Color del texto */
+}
+
+/* Estilo para la sección Noticias */
+.noticias {
+    padding: 40px 20px; /* Espaciado interno */
+    background-color:  #0D0D0D; /* Fondo */
+    text-align: center; /* Centrar texto */
+
+
+}
+
+.noticia-card {
+    display: flex; /* Flex para alinear imagen y texto */
+    margin-bottom: 20px; /* Espaciado entre noticias */
+    border: 1px solid #ddd; /* Borde alrededor de cada noticia */
+    border-radius: 8px; /* Bordes redondeados */
+    overflow: hidden; /* Cortar contenido desbordante */
+}
+
+.noticia-card img {
+    width: 150px; /* Ancho fijo para las imágenes */
+    height: auto; /* Altura automática */
+}
+
+.noticia-descripcion {
+    padding: 10px; /* Espaciado interno */
+}
+
+.noticia-descripcion h3 {
+    margin: 0 0 10px; /* Espaciado del título */
+    color: #6650F2; /* Color del título */
+}
+
+/* Carrusel*/
+.carrusel-seccion {
+    margin: 5px 0; /* Espacio superior e inferior */
+    text-align: center; /* Centra el título */
+}
+
+.carrusel-seccion .carousel-inner {
+    height: 600px; /* Ajusta la altura que desees para el carrusel */
+}
+
+.carrusel-seccion .carousel-item img {
+    height: 100%; /* Ajusta la imagen para que ocupe toda la altura del carrusel */
+    width: 100%; /* Asegura que la imagen ocupe todo el ancho */
+    object-fit: cover; /* Esto asegura que la imagen se ajuste sin recortarse */
+}
+
+.carrusel-seccion .carousel-item {
+    display: flex; /* Usar flex para centrar el contenido */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    height: 100%; /* Asegura que el item use toda la altura disponible */
+}
+.carrusel-seccion h2 {
+    color: #0D0D0D; /* Color que prefieras, aquí es un tono naranja */
+    font-size: 2rem; /* Ajusta el tamaño según lo necesites */
+    text-align: center; /* Centra el texto */
+    margin-bottom: 1rem; /* Agrega un margen debajo */
+    font-weight: bold; /* Hace el texto más grueso */
+}
+
+
+
+/* Estilo para la sección Suscripción */
+.suscripcion {
+    background-color: #6650F2; /* Fondo */
+    padding: 40px 20px; /* Espaciado interno */
+    text-align: center; /* Centrar contenido */
+}
+
+.suscripcion-form {
+    margin-top: 20px; /* Margen superior */
+}
+
+
+
+
+.suscripcion-form input[type="email"] {
+    padding: 10px; /* Espaciado interno */
+    border: 1px solid #ddd; /* Borde */
+    border-radius: 5px; /* Bordes redondeados */
+    width: 250px; /* Ancho fijo */
+}
+
+.suscripcion-form button {
+    padding: 10px 20px; /* Espaciado interno */
+    background-color: #6650F2; /* Color de fondo */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambiar cursor al pasar por encima */
+}
+
+.suscripcion-form button:hover {
+    background-color: #5741C2; /* Color al pasar el cursor */
+}
+
+
+
+/*CONTACTO */
+.contact {
+
+    padding-top: 80px;  /* Espacio adicional arriba */
+}
+
+
+
+.contact-form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.contact-form button {
+    padding: 10px;
+    font-size: 18px;
+    color: white;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #0056b3;
+}
+
+
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px; /* Ancho máximo */
+    margin: 20px auto; /* Centrado y margen superior/inferior */
+    padding: 30px; /* Aumentar el padding para un fondo más grande */
+    background-color: #f4f4f4; /* Fondo gris claro */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
+}
+
+.contacto-descripcion {
+    background-color: #f0f0f0; /* Fondo gris claro */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px; /* Espacio inferior para separar del portafolio */
+}
+
+.contacto-descripcion p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #405261;
+    margin: 0;
+}
+
+.map-container {
+    margin: 20px auto;
+    text-align: center;
+}
+
+
+
+/***Historia**/
+.Historia {
+    background-color: #FF4500; /* Fondo gris claro */
+    padding: 30px;
+    text-align: center;
+}
+
+.Historia h1 {
+    color: #F2F2F2; /* Color rojo para el título */
+}
+
+.Historia-Mision_Vision {
+    display: flex;
+    justify-content: space-around; /* Espacio entre las columnas */
+    padding: 30px;
+    background-color: #6650F2; /* Fondo amarillo claro */
+}
+
+.mision, .vision {
+    width: 45%; /* Ancho para que ambas columnas quepan */
+}
+
+.Historia-importancia-ilusion {
+    background-color: #FFD700; /* Fondo verde claro */
+    padding: 30px;
+    text-align: center;
+}
+
+.Historia-importancia-ilusion h2 {
+    color: #6650F2; /* Color verde para el subtítulo */
+    text-align: center;
+}
+
+.Historia-importancia-ilusion p {
+    font-size: 1.1em; /* Tamaño de fuente */
+    line-height: 1.6; /* Espaciado entre líneas */
+    color: #6650F2; /* Color del texto del párrafo */
+}
+
+
+/*Preguentas Frecuentes*/
+
+
+
+.faq-section img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%); /* Centra la imagen */
+    object-fit: cover; /* Asegura que la imagen cubra el área sin distorsión */
+    z-index: -1; /* Asegura que la imagen esté detrás del contenido */
+
+
+
+}
+
+
+
+.faq-section {
+    position: relative; /* Necesario para el posicionamiento absoluto de los elementos dentro */
+    text-align: center; /* Centrar el texto */
+
+    width: 100%;
+    height: 100vh; /* Ocupa toda la altura del viewport */
+    overflow: hidden; /* Evita que haya barras de desplazamiento */
+
+    padding-top: 100px;  /* Espacio adicional arriba */
+}
+.faq-background {
+    width: 100%; /* Hacer que la imagen de fondo cubra el contenedor */
+    height: auto; /* Ajustar la altura automáticamente */
+}
+.faq-content {
+    position: absolute; /* Posicionar sobre la imagen */
+    top: 0; /* Ajustar según sea necesario */
+    left: 50%;
+    transform: translateX(-50%); /* Centrar horizontalmente */
+    z-index: 1; /* Asegurar que esté por encima de la imagen */
+    padding: 20px; /* Espaciado alrededor del contenido */
+    color: white; /* Color del texto, ajustar según necesites */
+
+
+
+}
+
+.accordion {
+    width: 80%; /* Ajusta el ancho según sea necesario */
+    max-width: 2000px; /* Añadir un máximo ancho para evitar que se extienda demasiado */
+    z-index: 1; /* Asegurar que esté por encima de la imagen */
+    border-radius: 10px; /* Esquinas redondeadas */
+    padding: 175px; /* Espaciado alrededor de la acordeón */
+}

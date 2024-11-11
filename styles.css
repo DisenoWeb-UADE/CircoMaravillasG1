@@ -153,36 +153,77 @@ footer .logo img {
     color: #6650F2; /* Color del título */
 }
 
-/* Carrusel*/
-.carrusel-seccion {
-    margin: 5px 0; /* Espacio superior e inferior */
-    text-align: center; /* Centra el título */
+
+
+
+ 
+/****Espectaculos ***/
+
+
+.carousel-inner img {
+    border-radius: 8px 8px 0 0; /* Redondea solo las esquinas superiores */
+    object-fit: cover; /* Asegura que la imagen cubra todo el contenedor */
 }
 
-.carrusel-seccion .carousel-inner {
-    height: 600px; /* Ajusta la altura que desees para el carrusel */
+
+
+
+
+/***/
+/* Contenedor de las tarjetas */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Ajusta el tamaño mínimo */
+    gap: 20px; /* Espacio entre tarjetas */
+    padding: 20px;
 }
 
-.carrusel-seccion .carousel-item img {
-    height: 100%; /* Ajusta la imagen para que ocupe toda la altura del carrusel */
-    width: 100%; /* Asegura que la imagen ocupe todo el ancho */
-    object-fit: cover; /* Esto asegura que la imagen se ajuste sin recortarse */
+.cards-grid {
+
+    background-image: url("Imagenes/cielo3.webp"); /* Ruta de la imagen de fondo */
+    background-size: cover; /* Asegura que la imagen cubra toda la sección */
+    background-position: center; /* Centra la imagen en la sección */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
 }
 
-.carrusel-seccion .carousel-item {
-    display: flex; /* Usar flex para centrar el contenido */
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
-    height: 100%; /* Asegura que el item use toda la altura disponible */
+
+/* Estilo para las tarjetas individuales */
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);*/
+    border-radius: 8px;
+    overflow: hidden;
 }
-.carrusel-seccion h2 {
-    color: #0D0D0D; /* Color que prefieras, aquí es un tono naranja */
-    font-size: 2rem; /* Ajusta el tamaño según lo necesites */
-    text-align: center; /* Centra el texto */
-    margin-bottom: 1rem; /* Agrega un margen debajo */
-    font-weight: bold; /* Hace el texto más grueso */
+/* Estilo para las tarjetas individuales con fondo transparente */
+.card {
+
+
+   
+    backdrop-filter: blur(5px); /* Aplica un efecto de desenfoque al fondo detrás */
+ 
+   /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);*/ /* Sombra suave */
+
+    padding: 20px; /* Espaciado interno para que el contenido no quede pegado a los bordes */
 }
 
+/* Estilo para tarjetas completamente transparentes */
+.card {
+
+    background-color: transparent; /* Fondo completamente transparente */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Borde ligero para visibilidad */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave para resaltar la tarjeta */
+
+}
+
+
+
+/* Ajusta las imágenes del carrusel en las tarjetas */
+.card .carousel-inner img {
+    border-radius: 8px 8px 0 0; /* Solo esquinas superiores */
+    object-fit: cover;
+}
 
 
 /* Estilo para la sección Suscripción */
@@ -389,4 +430,172 @@ footer .logo img {
     z-index: 1; /* Asegurar que esté por encima de la imagen */
     border-radius: 10px; /* Esquinas redondeadas */
     padding: 175px; /* Espaciado alrededor de la acordeón */
+}
+
+
+
+/****/
+/* Transición para botones */
+.contact-form button, .suscripcion-form button, .accordion-button {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Efecto al pasar el mouse */
+.contact-form button:hover, .suscripcion-form button:hover, .accordion-button:hover {
+    background-color: #0056b3; /* Ajusta según el color deseado */
+    transform: scale(1.05); /* Amplía el botón ligeramente */
+}
+
+/* Transición para enlaces del menú de navegación */
+nav ul li a {
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #f0f0f0; /* Cambia el color cuando se pasa el mouse */
+}
+
+
+/**ENTRADAS*/
+/***MAPA**/
+/* Estilo principal de la sección de entradas */
+.mapa-entradas {
+    background-color: #5A4FCF; /* Fondo morado */
+    color: #FFFFFF;
+    padding: 50px 20px;
+    text-align: center;
+}
+/* Margen superior para separar el mapa del header */
+.mapa-entradas {
+    padding-top: 100px; /* Ajusta el valor según lo necesites */
+    padding-bottom: 20px; /* Añade un poco de espacio inferior para equilibrio */
+}
+/* Contenedor de contenido para descripción y mapa */
+.mapa-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 40px; /* Espacio entre descripción y mapa */
+}
+
+/* Estilo de la descripción */
+.mapa-descripcion {
+    max-width: 400px;
+    text-align: left;
+}
+
+.mapa-descripcion h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.mapa-descripcion p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+/* Estilo de los botones */
+.mapa-descripcion button {
+    display: block;
+    width: 100%;
+    background-color: #7857FF; /* Color de fondo para los botones */
+    color: #FFFFFF;
+    border: none;
+    border-radius: 20px;
+    padding: 12px;
+    font-size: 1rem;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.mapa-descripcion button:hover {
+    background-color: #644bcc; /* Color al pasar el cursor */
+}
+
+/* Estilo para el mapa */
+#map {
+    width: 600px;
+    height: 400px;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Sombra alrededor del mapa */
+}
+
+
+
+
+
+
+
+/*******/
+
+
+
+#entradas-info {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+#entradas-info p {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+
+/* Estilo para la sección de compra de entradas */
+.compra-entradas {
+    background-color:  #E0E0E0; /* Fondo color amarillo dorado */
+    color: #000; /* Texto en color negro */
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 800px;
+    margin: 0 auto; /* Centrar la sección */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+.compra-entradas h2 {
+    color: #000; /* Títulos en negro */
+}
+
+.compra-entradas label {
+    font-weight: bold;
+    color: #000; /* Etiquetas en negro */
+    display: block;
+    margin-top: 10px;
+}
+
+.compra-entradas select,
+.compra-entradas input {
+    margin-top: 5px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    margin-bottom: 10px;
+}
+
+#comprar {
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Botón  */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+#comprar:hover {
+    background-color: #e03e00; /* Color al pasar el cursor */
 }

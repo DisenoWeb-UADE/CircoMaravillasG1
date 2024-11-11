@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página del Circo</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 </head>
 <body>
     <header>
@@ -28,21 +30,62 @@
     <main>
         <section class="hero">
             <video autoplay muted loop playsinline>
-                <source src="Imagenes/presentacionCirco.mp4" type="video/mp4">
+                <source src="Imagenes/background-avance.mp4" type="video/mp4">
                 Tu navegador no soporta el elemento de video.
             </video>
         </section>
+
+        <section class="mapa-entradas">
+            <div class="mapa-content">
+                <div class="mapa-descripcion">
+                    <h2>¡Actuaciones en todo el mundo!</h2>
+                    <p>Localice un espectáculo del Circo Maravilla en cualquier lugar y en cualquier momento</p>
+                    <button>Todos los espectáculos</button>
+                    <button>Todas las fechas</button>
+                </div>
+                <div id="map"></div>
+            </div>
+        </section>
+
+        <section class="compra-entradas">
+            <h2>Compra de Entradas</h2>
+            <label for="ciudad">Ciudad:</label>
+            <select id="ciudad"></select>
+        
+            <label for="fecha">Fecha:</label>
+            <select id="fecha"></select>
+        
+            <label for="horario">Horario:</label>
+            <select id="horario"></select>
+        
+            <label for="cantidad">Cantidad de asientos:</label>
+            <input type="number" id="cantidad" min="1" value="1" />
+        
+            <button id="comprar">Comprar Entradas</button>
+        
+        </section>
+        
+
     </main>
 
-    <footer>
-        <div class="footer-content">
-            <p>Materia: Diseño y Desarrollo Web &nbsp;&nbsp;|&nbsp;&nbsp; Curso: 14016 &nbsp;&nbsp;|&nbsp;&nbsp; Grupo: 01</p>
-            <p>© Todos los Derechos reservados - Sitio desarrollado para uso educativo - 2024</p>
-        </div>
-        <div class="logo">
-            <img src="Imagenes/uade.png" alt="Logo UADE">
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <p class="mb-0">Materia: Diseño y Desarrollo Web | Curso: 14016 | Grupo: 01</p>
+                    <p class="mb-0">© Todos los Derechos reservados - Sitio desarrollado para uso educativo - 2024</p>
+                </div>
+                <div class="col-md-4 text-md-end">
+                    <img src="Imagenes/uade.png" alt="Logo UADE" height="50">
+                </div>
+            </div>
         </div>
     </footer>
+
+        <!-- Incluye el archivo de JavaScript -->
+        <script src="scrips.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+
 </body>
 </html>
 

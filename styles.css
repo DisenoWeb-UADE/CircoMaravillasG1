@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rum+Raisin&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Henny+Penny&display=swap');
 
 
 * {
@@ -458,9 +459,11 @@ nav ul li a:hover {
 
 /**ENTRADAS*/
 /***MAPA**/
+
+
 /* Estilo principal de la sección de entradas */
 .mapa-entradas {
-    background-color: #5A4FCF; /* Fondo morado */
+    background-color: #0a0079; /* Fondo morado */
     color: #FFFFFF;
     padding: 50px 20px;
     text-align: center;
@@ -491,6 +494,7 @@ nav ul li a:hover {
     font-size: 2rem;
     font-weight: bold;
     margin-bottom: 10px;
+    /* font-family: "Henny Penny", system-ui; */
 }
 
 .mapa-descripcion p {
@@ -498,26 +502,6 @@ nav ul li a:hover {
     margin-bottom: 20px;
 }
 
-/* Estilo de los botones */
-.mapa-descripcion button {
-    display: block;
-    width: 100%;
-    background-color: #7857FF; /* Color de fondo para los botones */
-    color: #FFFFFF;
-    border: none;
-    border-radius: 20px;
-    padding: 12px;
-    font-size: 1rem;
-    margin: 10px 0;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.mapa-descripcion button:hover {
-    background-color: #644bcc; /* Color al pasar el cursor */
-}
-
-/* Estilo para el mapa */
 #map {
     width: 600px;
     height: 400px;
@@ -526,76 +510,32 @@ nav ul li a:hover {
 }
 
 
-
-
-
-
-
-/*******/
-
-
-
-#entradas-info {
-    margin-top: 20px;
-    padding: 15px;
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 8px;
-    max-width: 800px;
-    margin: 0 auto;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+/***FORMULARIO**/
+.form-entradas {
+    padding: 18px 0px 80px 0px;
+    /* background-color:#1c1c1c; */
+    background: rgb(28,28,28);
+    background: linear-gradient(180deg, rgba(28,28,28,1) 0%, rgba(10,0,121,1) 100%);
 }
 
-
-#entradas-info p {
-    font-size: 1rem;
-    font-weight: bold;
+.form-entradas h1 {
+    /* font-family: "Henny Penny", system-ui; */
 }
 
-
-/* Estilo para la sección de compra de entradas */
-.compra-entradas {
-    background-color:  #E0E0E0; /* Fondo color amarillo dorado */
-    color: #000; /* Texto en color negro */
-    padding: 20px;
-    border-radius: 8px;
-    max-width: 800px;
-    margin: 0 auto; /* Centrar la sección */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
-}
-
-.compra-entradas h2 {
-    color: #000; /* Títulos en negro */
-}
-
-.compra-entradas label {
-    font-weight: bold;
-    color: #000; /* Etiquetas en negro */
-    display: block;
-    margin-top: 10px;
-}
-
-.compra-entradas select,
-.compra-entradas input {
-    margin-top: 5px;
-    padding: 10px;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    width: 100%; /* Ocupa todo el ancho del contenedor */
-    margin-bottom: 10px;
-}
-
-#comprar {
-    padding: 10px 20px;
-    background-color: #4CAF50; /* Botón  */
+.espectaculos {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(246, 0, 0, 0.25);
     color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
     font-weight: bold;
-    transition: background-color 0.3s ease;
+    padding-top: 1.25rem;
+    column-gap: 0.5rem; 
+    border-radius: 10px 10px 0px 0px;
+    margin-bottom: 20px;
 }
 
-#comprar:hover {
-    background-color: #e03e00; /* Color al pasar el cursor */
+.espectaculos:hover {
+    transform: scale(1.05);
+    cursor: pointer;
 }
+

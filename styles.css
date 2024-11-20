@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rum+Raisin&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Henny+Penny&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
 
 
 * {
@@ -33,8 +34,12 @@ header {
 }
 
 .logo-header img {
-    height: 70px;
-    margin: 10px 0px 10px 25px;
+    height: 60px;
+    margin: 10px 20px;
+}
+
+nav {
+    position: relative;
 }
 
 nav ul {
@@ -543,7 +548,7 @@ nav ul li a:hover {
 
 /* Estilo principal de la sección de entradas */
 .mapa-entradas {
-    background-color: #0a0079; /* Fondo morado */
+    /* background-color: #0a0079; Fondo morado */
     color: #FFFFFF;
     padding: 50px 20px;
     text-align: center;
@@ -584,29 +589,57 @@ nav ul li a:hover {
 
 #map {
     width: 600px;
-    height: 400px;
+    height: 500px;
     border-radius: 20px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Sombra alrededor del mapa */
 }
 
+.main-entradas {
+    background-image: url("https://i.etsystatic.com/11810216/r/il/402ad3/3139945119/il_1080xN.3139945119_3j7d.jpg");
+    height: 100vh;
+    font-family: "Mulish", sans-serif;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.form-inputs {
+    display: flex;
+    flex-direction: column;
+    color: rgb(111, 111, 111);
+}
+
+.form-inputs label {
+    color: white;
+}
+
+.form-inputs select,
+.form-inputs input {
+    border-radius: 0.375rem;
+    padding: 0.5rem;
+    color: gray;
+}
+
+.espectaculo-elegido {
+    border-top-right-radius: 20px;
+}
+
+.espectaculo-elegido h1 {
+    font-family: "Rum Raisin", sans-serif;
+}
 
 /***FORMULARIO**/
 .form-entradas {
     padding: 18px 0px 80px 0px;
     /* background-color:#1c1c1c; */
-    background: rgb(28,28,28);
-    background: linear-gradient(180deg, rgba(28,28,28,1) 0%, rgba(10,0,121,1) 100%);
-}
-
-.form-entradas h1 {
-    /* font-family: "Henny Penny", system-ui; */
+    background: rgb(3,0,31);
+    background: linear-gradient(180deg, rgba(3,0,31,1) 0%, rgba(10,0,121,1) 100%);
 }
 
 .espectaculos {
     display: flex;
     flex-direction: column;
-    background-color: rgba(246, 0, 0, 0.25);
-    color: white;
+    background-color: #cca352;
+    color: black;
     font-weight: bold;
     padding-top: 1.25rem;
     column-gap: 0.5rem; 
@@ -619,3 +652,15 @@ nav ul li a:hover {
     cursor: pointer;
 }
 
+@media only screen and (max-width: 768px) {
+    #map {
+        width: 350px;
+        height: 300px;
+        margin: 5rem 0rem;
+    }
+
+    .espectaculos {
+        width: fit-content;
+        align-self: center;
+    }
+}

@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <script rel="stylesheet" src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css"  rel="stylesheet" />
 </head>
 <body>
     <header>
@@ -17,208 +19,193 @@
             </a>
         </div>
         <nav>
-            <ul>
+          <ul>
                 <li><a href="espectaculos.html">Espectáculos</a></li>
                 <li><a href="entradas.html">Entradas</a></li>
                 <li><a href="historia.html">Historia</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
                 <li><a href="https://www.figma.com/design/U7SxQtH8wjbMZym3ypb61p/Circo-Maravillas?node-id=4017-43" target="_blank" >Prototipo</a></li>
                 <li><a href="preguntasFrecuentes.html">Preguntas Frecuentes</a></li>
-            </ul>
+          </ul>
         </nav>
     </header>
 
-    <main>
-        <section class="hero">
-            <video autoplay muted loop playsinline>
-                <source src="Imagenes/background-avance.mp4" type="video/mp4">
-                Tu navegador no soporta el elemento de video.
-            </video>
-        </section>
+    <main class="main-entradas bg-red-500 h-fit">
+        <section>
+          <select id="espectaculos" class="mt-8 p-2 rounded-md text-gray-500">
+            <option value="">Seleccioná el espectáculo</option>
+            <option value="Payaso de Fuego">Payaso de Fuego</option>
+            <option value="Luna y Sol">Luna y Sol</option>
+            <option value="Equilibrio Supremo">Equilibrio Supremo</option>
+            <option value="Los Voladores">Los Voladores</option>
+          </select>
 
-        <section class="mapa-entradas py-32">
-          <div class="text-center max-w-xl mx-auto">
-            <h2 class="text-3xl font-bold text-white">¡Actuaciones en toda la Argentina!</h2>
-            <p class="text-white mt-4">Localiza un espectáculo del Circo Maravilla cerca de ti.</p>
-            <div id="map" class="mt-6 h-64 bg-gray-200 rounded-lg shadow-inner"></div>
-          </div>
-        </section>
-
-        <section class="form-entradas pt-16">
-          <h1 class="max-w-4xl mx-auto text-3xl font-bold my-10">¡Saca tus entradas!</h1>
-          <div class="max-w-4xl mx-auto p-4 bg-[#1c1c1c]/50 text-white shadow-md rounded-md">
-            <form id="ticket-form" class="space-y-6">
-                <div class="text-center">
-                  <h1 class="mb-5 text-left">Para comenzar, elija el espectáculo: </h1>
-
-                  <div class="flex justify-between gap-x-3">
-
-                    <div id="El Malavarista" class="espectaculos">
-                      <h1 class="text-center">El Malavarista</h1>
-                      <img src="Imagenes/espectaculo1.webp" alt="elmalavarista" class="w-full h-full"/>
-                    </div>
-
-                    <div id="El Hombre Bomba" class="espectaculos">
-                      <h1 class="text-center">El Hombre Bomba</h1>
-                      <img src="Imagenes/hombreCañon1.jpg" alt="elhombrebomba" class="w-full h-full"/>
-                    </div>
-
-                    <div id="El Hombre Cuchillo" class="espectaculos">
-                      <h1 class="text-center">El Hombre Cuchillo</h1>
-                      <img src="Imagenes/hombreCuchillos1.jpg" alt="elhombrecuchillo" class="w-full h-full"/>
-                    </div>
-
-                    <div id="Lanza Llamas" class="espectaculos">
-                      <h1 class="text-center">Lanza Llamas</h1>
-                      <img src="Imagenes/HombreTiraFuego.webp" alt="lanzallamas" class="w-full h-full"/>
-                    </div>
-
-                    <div id="Cuerda Floja" class="espectaculos">
-                      <h1 class="text-center">Cuerda Floja</h1>
-                      <img src="Imagenes/CuerdaFloja1.webp" alt="cuerdafloja" class="w-full h-full"/>
-                    </div>
-
-                  </div>
-
-                  <h id="show-chosen" class="font-bold text-xl"></h>
-
+          <div>
+            <div id="espectaculo-elegido" class="espectaculo-elegido flex flex-col md:flex-row bg-red-950/85 md:rounded-tr-[4.5rem] mt-8 md:mx-28 pb-5 md:pb-0 hidden">
+              <img src="./Imagenes/CuerdaFloja2.png" alt="Sol y Luna" class="h-40 w-auto"/>
+              <div>
+                <div class="bg-[#cca352] text-right w-fit justify-self-end text-4xl text-white font-bold md:rounded-tr-full rounded-bl-full mb-5">
+                  <h1 id="espectaculo-titulo" class="px-16 py-2"></h1>
                 </div>
-
-                <div id="probando" class="hidden space-y-6">
-                    <div>
-                      <label for="city" class="block text-sm font-bold mb-2">Ciudad:</label>
-                      <select id="city" class="w-full bg-white/25 rounded-md p-2 text-black" required>
-                        <option value="">-- Seleccionar --</option>
-                        <optgroup label="Región Metropolitana (AMBA)">
-                          <option value="CABA">Buenos Aires (CABA)</option>
-                          <option value="La Plata">La Plata</option>
-                          <option value="Avellaneda">Avellaneda</option>
-                          <option value="Lomas de Zamora">Lomas de Zamora</option>
-                          <option value="San Isidro">San Isidro</option>
-                        </optgroup>
-                        <optgroup label="Región Pampeana">
-                          <option value="Rosario">Rosario (Santa Fe)</option>
-                          <option value="Santa Fe">Santa Fe (capital)</option>
-                          <option value="Mar del Plata">Mar del Plata</option>
-                          <option value="Bahía Blanca">Bahía Blanca</option>
-                          <option value="Tandil">Tandil</option>
-                        </optgroup>
-                        <optgroup label="Región Norte (NEA y NOA)">
-                          <option value="Salta">Salta (capital)</option>
-                          <option value="San Salvador de Jujuy">San Salvador de Jujuy</option>
-                          <option value="Tucumán">Tucumán (San Miguel de Tucumán)</option>
-                          <option value="Resistencia">Resistencia (Chaco)</option>
-                          <option value="Posadas">Posadas (Misiones)</option>
-                        </optgroup>
-                        <optgroup label="Región Cuyo">
-                          <option value="Mendoza">Mendoza (capital)</option>
-                          <option value="San Juan">San Juan (capital)</option>
-                          <option value="San Luis">San Luis (capital)</option>
-                        </optgroup>
-                        <optgroup label="Región Patagonia">
-                          <option value="Bariloche">Bariloche (Río Negro)</option>
-                          <option value="Neuquén">Neuquén (capital)</option>
-                          <option value="Comodoro Rivadavia">Comodoro Rivadavia (Chubut)</option>
-                          <option value="Ushuaia">Ushuaia (Tierra del Fuego)</option>
-                          <option value="Río Gallegos">Río Gallegos (Santa Cruz)</option>
-                        </optgroup>
-                        <optgroup label="Región Centro">
-                          <option value="Córdoba">Córdoba (capital)</option>
-                          <option value="Villa Carlos Paz">Villa Carlos Paz</option>
-                          <option value="Río Cuarto">Río Cuarto</option>
-                          <option value="Paraná">Paraná (Entre Ríos)</option>
-                          <option value="Gualeguaychú">Gualeguaychú (Entre Ríos)</option>
-                        </optgroup>
-                      </select>
-                    </div>
-              
-                    <div>
-                      <label for="date" class="block text-sm font-bold mb-2">Fecha:</label>
-                      <input type="date" id="date" class="w-full bg-white/25 rounded-md p-2 text-black" required>
-                    </div>
-                    <div>
-                      <label for="time" class="block text-sm font-bold mb-2">Horario:</label>
-                      <select id="time" class="w-full bg-white/25 rounded-md p-2 text-black" required>
-                        <option value="">-- Seleccionar --</option>
-                        <option value="16:00">16:00</option>
-                        <option value="18:00">18:00</option>
-                        <option value="20:00">20:00</option>
-                      </select>
-                    </div>
-              
-                    <div>
-                      <label for="category" class="block text-sm font-bold mb-2">Categoría de entrada:</label>
-                      <select id="category" class="w-full bg-white/25 rounded-md p-2 text-black" required>
-                        <option value="">-- Seleccionar --</option>
-                        <option value="Normal">Normal</option>
-                        <option value="Pack Familiar">Pack Familiar</option>
-                        <option value="Meet & Greet">Meet & Greet</option>
-                        <option value="VIP">VIP</option>
-                      </select>
-                    </div>
-    
-                    <div>
-                      <label for="quantity" class="block text-sm font-bold mb-2">Cantidad:</label>
-                      <input type="number" id="quantity" class="w-full bg-white/25 rounded-md p-2 text-black" min="1" max="10" required>
-                    </div>
-    
-                    <div>
-                      <label for="mail" class="block text-sm font-bold mb-2">Mail de contacto:</label>
-                      <input type="text" id="mail" class="w-full bg-white/25 rounded-md p-2 text-black mb-2" placeholder="Ingrese su mail" required>
-                      <!-- <h id="mail-invalido" class="hidden text-red-500 m-2">Mail invalido</h> -->
-                    </div>
-                            
-                    <div id="summary" class="p-4  bg-white/25 text-white rounded-md">
-                      <h2 class="font-bold text-lg">Resumen:</h2>
-                      <p id="summary-text" class="text-sm">Por favor, completa todos los campos para ver el resumen.</p>
-                    </div>
-    
-                    <div class="mt-5">
-                      <input type="checkbox" id="discapacidad" name="discapacidad-checkbox" />
-                      <label for="discapacidad" class="text-sm font-bold">¿Atenderá una persona con discapacidad?</label>
-                    </div>
-    
-                    <div id="disability-field" class="hidden mt-5">
-                      <div class="mb-3">
-                        <label for="special-needs" class="block text-sm font-bold mb-2">Acomodaciones necesarias:</label>
-                        <textarea id="special-needs" class="w-full p-2 bg-white/25 rounded-md text-black" placeholder="Describa las necesidades especiales"></textarea>
-                      </div>
-                      <div class="mt-2">
-                        <a href="preguntasFrecuentes.html" class="text-blue-500 underline">Más información sobre las facilidades para personas con discapacidad</a>
-                      </div>
-                      <p class="text-green-600 mt-3">* La entrada para la persona con discapacidad será gratuita presentando el CUD.</p>
-                    </div>
-              
-                    <button type="button" id="pay-button" class="w-full bg-green-800 hover:bg-green-700 py-2 rounded-md font-bold disabled:bg-gray-900 disabled:cursor-not-allowed" disabled>
-                      Proceder al pago con Mercado Pago y enviar confirmación al mail
-                    </button>
-                    <button type="button" id="no-payment-button" class="w-full bg-green-800 hover:bg-green-700 py-2 rounded-md font-bold disabled:bg-gray-900 disabled:cursor-not-allowed hidden" disabled>
-                      Enviar confirmación al mail
-                    </button>
-                  </form>
+                <h id="espectaculo-descripcion" class="text-left mx-16"></h>
               </div>
             </div>
-          
+
+            <div class="flex flex-col md:flex-row md:justify-center mt-16 md:mx-28 gap-x-10">
+              <form id="form-entradas" class="flex flex-col bg-red-950/85 rounded-xl text-left gap-5 mx-auto py-4 px-2 md:p-10">
+                <div class="form-inputs">
+                  <label for="city">Ciudad</label>
+                  <select id="city" class="" required>
+                    <option value="">Seleccioná tu ciudad</option>
+                    <optgroup label="Región Metropolitana (AMBA)">
+                      <option value="CABA">Buenos Aires (CABA)</option>
+                      <option value="La Plata">La Plata</option>
+                      <option value="Lomas de Zamora">Lomas de Zamora</option>
+                      <option value="San Isidro">San Isidro</option>
+                    </optgroup>
+                    <optgroup label="Región Pampeana">
+                      <option value="Rosario">Rosario (Santa Fe)</option>
+                      <option value="Santa Fe">Santa Fe (capital)</option>
+                      <option value="Mar del Plata">Mar del Plata</option>
+                      <option value="Tandil">Tandil</option>
+                    </optgroup>
+                    <optgroup label="Región Norte (NEA y NOA)">
+                      <option value="Salta">Salta (capital)</option>
+                      <option value="Tucumán">Tucumán (San Miguel de Tucumán)</option>
+                      <option value="Posadas">Posadas (Misiones)</option>
+                    </optgroup>
+                    <optgroup label="Región Cuyo">
+                      <option value="Mendoza">Mendoza (capital)</option>
+                    </optgroup>
+                    <optgroup label="Región Patagonia">
+                      <option value="Bariloche">Bariloche (Río Negro)</option>
+                    </optgroup>
+                    <optgroup label="Región Centro">
+                      <option value="Villa Carlos Paz">Villa Carlos Paz</option>
+                    </optgroup>
+                  </select>
+                </div>
+
+                <div class="flex flex-col md:flex-row gap-x-10">
+                  <div class="form-inputs">
+                    <label for="date">Fecha</label>
+                    <input id="date" type="date" required/>
+                  </div>
+
+                  <div class="form-inputs">
+                    <label for="time">Horario</label>
+                    <select id="time" required>
+                      <option value="">Seleccioná un horario disponible</option>
+                      <option value="16:00">16:00</option>
+                      <option value="18:00">18:00</option>
+                      <option value="20:00">20:00</option>
+                      <option value="20:00">22:00</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="flex flex-col md:flex-row gap-x-10">
+                  <div class="form-inputs">
+                    <label for="category">Categoría de entradas</label>
+                    <select id="category" required>
+                      <option value="">Elegí la categoría de tu entrada</option>
+                      <option value="Normal">Normal ($20,000)</option>
+                      <option value="Pack Familiar">Pack Familiar (4 x $70,000)</option>
+                      <option value="Meet & Greet">Meet & Greet ($50,000)</option>
+                      <option value="VIP">VIP ($100,000)</option>
+                    </select>
+                  </div>
+
+                  <div class="form-inputs">
+                    <label for="quantity">Cantidad de entradas</label>
+                    <input id="quantity" type="number" min="1" max="10" placeholder="Ingresá la cantidad de entradas" required/>
+                  </div>
+                </div>
+                
+                <div class="form-inputs">
+                  <label for="mail">Mail de contacto</label>
+                  <input id="mail" placeholder="Ecribí tu correo para la confirmación" required/>
+                </div>
+
+                <h id="form-error" class="text-red-300"></h>
+
+                <div class="bg-[#cca352] w-fit self-center px-5 py-2 rounded-md flex gap-x-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                  </svg>                  
+                  <button id="form-submit" type="submit" class="disabled:cursor-not-allowed" disabled>Ir a pagar</button>
+                </div>
+              </form>
+              <div id="map"></div>
+            </div>
+          </div>
+
+          <div id="toast-success" class="flex items-center w-full max-w-xs p-4 mb-4 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800 mt-10 ml-2 md:ml-56 hidden" role="alert">
+            <div class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-green-500 bg-green-100 rounded-lg dark:bg-green-800 dark:text-green-200">
+                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+                </svg>
+                <span class="sr-only">Check icon</span>
+            </div>
+            <div class="ms-3 text-sm font-normal">Confirmación enviada al mail</div>
+            <button type="button" class="ms-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex items-center justify-center h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700" data-dismiss-target="#toast-success" aria-label="Close">
+                <span class="sr-only">Cerrar</span>
+                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                </svg>
+            </button>
+          </div>
+        </section>
+
+        <section class="bg-red-950/85 mx-auto text-center py-32 px-16 mt-32">
+          <h1 class="text-3xl font-bold">¿Qué ofrecen nuestras categorías?</h1>
+          <div class="flex flex-col md:flex-row justify-around mt-10 gap-5">
+            <div class="bg-gradient-to-r from-red-800 to-red-950 hover:scale-105">
+              <h1 class="font-bold bg-[#cca352] py-4 text-black">Categoría Normal</h1>
+              <p class="px-6 py-10">- Acceso al espectáculo general<br/>
+                 - Asientos en las zonas estándar con una vista cómoda<br/>
+                 - Ideal para disfrutar en familia o con amigos</p>
+            </div>
+            <div class="bg-gradient-to-r from-red-800 to-red-950 hover:scale-105">
+              <h1 class="font-bold bg-[#cca352] py-4 text-black">Pack Familiar</h1>
+              <p class="px-6 py-10">- Entrada para cuatro personas con descuento especial<br/>
+                - Asientos juntos en una ubicación preferente en la zona general<br/>
+                - Perfecto para familias o pequeños grupos</p>
+              </div>
+              <div class="bg-gradient-to-r from-red-800 to-red-950 hover:scale-105">
+                <h1 class="font-bold bg-[#cca352] py-4 text-black">Meet & Greet</h1>
+                <p class="px-6 py-10">Incluye todo lo de la entrada normal más: <br/>
+                   - Oportunidad de conocer a los artistas del circo tras el espectáculo<br/>
+                   - Fotografía y autógrafo con los protagonistas del show</p>
+              </div>
+            <div class="bg-gradient-to-r from-red-800 to-red-950 hover:scale-105">
+              <h1 class="font-bold bg-[#cca352] py-4 text-black">VIP</h1>
+              <p class="px-6 py-10">- Acceso prioritario al espectáculo con entrada sin filas<br/>
+                 - Asientos en las primeras filas para una experiencia cercana e inmersiva<br/>
+                 - Servicio exclusivo antes del show, con acceso a una zona lounge<br/>
+                 - Incluye el Meet & Greet con los artistas tras el espectáculo</p>
+            </div>
+          </div>
         </section>
     </main>
-    <footer class="bg-dark text-white py-4">
-      <div class="container">
-          <div class="row align-items-center">
-              <div class="col-md-8">
-                  <p class="mb-0">Materia: Diseño y Desarrollo Web | Curso: 14016 | Grupo: 01</p>
-                  <p class="mb-0">© Todos los Derechos reservados - Sitio desarrollado para uso educativo - 2024</p>
-              </div>
-              <div class="col-md-4 text-md-end">
-                  <img src="Imagenes/uade.png" alt="Logo UADE" height="50">
-              </div>
-          </div>
-      </div>
-  </footer>
 
-
+    <footer class="bg-dark fixed-bottom text-white py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <p class="mb-0">Materia: Diseño y Desarrollo Web | Curso: 14016 | Grupo: 01</p>
+                    <p class="mb-0">© Todos los Derechos reservados - Sitio desarrollado para uso educativo - 2024</p>
+                </div>
+                <div class="col-md-4 text-md-end">
+                    <img src="Imagenes/uade.png" alt="Logo UADE" height="50">
+                </div>
+            </div>
+        </div>
+    </footer>
+    
     <script src="scrips.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
 </body>
 </html>
 

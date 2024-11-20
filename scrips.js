@@ -104,7 +104,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // VARIABLES Y VALIDACION DEL FORMULARIO
     const form = document.getElementById("form-entradas");
+    const resumen = document.getElementById("resumen");
+    const discapacidad = document.getElementById("discapacidad");
+    const informacion_adicional = document.getElementById("informacion-adicional");
+    const svg = document.getElementById("svg");
     const submit = document.getElementById("form-submit");
+    const continuacion = document.getElementById("continuacion");
+    const btn_confirmacion = document.getElementById("boton-confirmacion");
+    const btn_arrepentimiento = document.getElementById("boton-arrepentimiento");
     const confirmacion = document.getElementById("toast-success");
     const error = document.getElementById("form-error");
     const quantity4 = document.getElementById("quantity");
@@ -138,116 +145,46 @@ document.addEventListener("DOMContentLoaded", () => {
             } else {
                 error.innerText = "";
                 submit.disabled = false;
+                resumen.innerText = `Estas por comprar ${quantity} entrada/s de categoría ${category} para ver ${espectaculo} el ${date} las ${time}hs en nuestro teatro de ${city} ¿Querés continuar con la compra?`
             }
         }        
     })
 
     form.addEventListener("submit", (e) => {
         e.preventDefault();
-        confirmacion.style.display = "flex";
-        window.scrollTo({ top: 830, behavior: 'smooth' });
+
+        if(submit.innerText == "Ir a pagar") {
+            continuacion.style.display = "flex";
+        } else {
+            confirmacion.style.display = "flex";
+            window.scrollTo({ top: 830, behavior: 'smooth' });
+        }
     })
 
-    // VARIABLES
-    // const form = document.getElementById("ticket-form");
-    // const summaryText = document.getElementById("summary-text");
-    // const summaryText2 = document.getElementById("summary-text-2");
-    // const payButton = document.getElementById("pay-button");
-    // const noPaymentButton = document.getElementById("no-payment-button");
-    // const espectaculos = document.querySelectorAll(".espectaculos");
-    // const disabilityBtn = document.getElementById('discapacidad');
-    // const disabilityField = document.getElementById('disability-field');
-    // const formulario = document.getElementById("probando");
-    // const quantity4 = document.getElementById("quantity");
-    // // const mailInvalido = document.getElementById('mail-invalido');
+    if(btn_confirmacion && btn_arrepentimiento) {
+        btn_confirmacion.addEventListener("click", () => {
+            continuacion.style.display = "none";
+            confirmacion.style.display = "flex";
+            window.scrollTo({ top: 830, behavior: 'smooth' });
+        });
 
-    // // PARA QUE SE PUEDA ELEGIR A PARTIR DE LA FECHA DEL MOMENTO
-    // document.getElementById("date").value = hoy;
-    // document.getElementById("date").min = hoy;
+        btn_arrepentimiento.addEventListener("click", () => {
+            location.reload();
+        })
+    }
 
-    // // PARA ELEGIR UN ESPECTÁCULO
-    // const showChosen = document.getElementById('show-chosen');
-    // let show;
+    discapacidad.addEventListener("change", (e) => {
+        if(e.target.checked) {
+            informacion_adicional.style.display = "block";
+            svg.style.display = "none";
+            submit.innerText = "Enviar confirmación al mail";
 
-    // espectaculos.forEach(espectaculo => {
-    //     espectaculo.addEventListener('click', () => {
-    //     formulario.style.display = "block";
-    //     const chosenId = espectaculo.id;
-    //     show = espectaculo.id;
-    //     showChosen.textContent = `Entradas para ${chosenId}`;;
-        
-    //     // RESETEO DE OPCIONES
-    //     document.getElementById("city").selectedIndex = null;
-    //     document.getElementById("date").selectedIndex = null;
-    //     document.getElementById("time").selectedIndex = null;
-    //     document.getElementById("category").selectedIndex = null;
-    //     document.getElementById("quantity").selectedIndex = null;
-    //     summaryText.textContent = "Por favor, completa todos los campos para ver el resumen.";
-    //     payButton.disabled = true;
-    //     disabilityBtn.checked = false;
-    //     disabilityField.classList.add('hidden');
-    //     document.getElementById("special-needs").value = "";
-    // })});
-    
-    // // PARA ELEGIR CIUDAD, FECHA, HORARIO, CATEGORÍA Y CANTIDAD DE ENTRADAS
-    // form.addEventListener("input", () => {
-
-    //   // SI SE SELECCIONA PACK FAMILIAR, SON 4 ENTRADAS AUTOMÁTICAMENTE
-    //   if(category == "Pack Familiar") {
-    //     quantity4.setAttribute("value", 4);
-    //     quantity4.setAttribute("min", 4);
-    //     quantity4.setAttribute("max", 4);
-    //   } else {
-    //     quantity4.setAttribute("value", 1);
-    //     quantity4.setAttribute("min", 1);
-    //     quantity4.setAttribute("max", 10);
-    //   }
-
-    // //   if(mail !== "" && emailValido(mail)) {
-    //     // mailInvalido.style.display = "none";
-    //       if (show && city && date && time && category && quantity && mail) {
-    //         let costo = costoTotal(category, quantity)
-
-    //         summaryText.textContent = `${show} - ${quantity} entrada/s de categoría ${category} ($${costo})`;
-    //         summaryText2.textContent = `${city} - ${date} a las ${time}hs`;
-    
-    //         payButton.disabled = false;
-    //       } else {
-    //         summaryText.textContent = "Por favor, completa todos los campos para ver el resumen.";
-    //       }
-    // //   } else {
-    //     // mailInvalido.style.display = "block";
-    // //   }
-  
-    // });
-  
-    // payButton.addEventListener("click", () => {
-    //   alert("Redirigiendo a Mercado Pago...");
-    // });
-
-    // // PARA PERSONAS CON DISCAPACIDAD
-    // disabilityBtn.addEventListener('change', () => {
-    //     if (disabilityField.classList.contains('hidden')) {
-    //     disabilityField.classList.remove('hidden');
-    //     payButton.style.display = "none";
-    //     noPaymentButton.style.display = "block";
-    //     } else {
-    //     disabilityField.classList.add('hidden');
-    //     payButton.style.display = "block";
-    //     noPaymentButton.style.display = "none";
-    //     }
-    // });
-    
-    // noPaymentButton.addEventListener("click", () => {
-    //     sendEmail();
-    //     alert("Enviando mail...");
-    //   });
-
-    // disabilityField.addEventListener("change", () => {
-    //     if(summaryText.textContent !== "Por favor, completa todos los campos para ver el resumen.") {
-    //         noPaymentButton.disabled = false;
-    //     }
-    // });
+        } else {
+            informacion_adicional.style.display = "none";
+            svg.style.display = "block";
+            submit.innerText = "Ir a pagar";
+        }
+    })
 });
 
 
@@ -290,100 +227,3 @@ ubicaciones.forEach(lugar => {
     // Mostrar información de entradas al hacer clic en el marcador
     // marker.on("click", () => mostrarEntradas(lugar.info));
 });
-
-
-// ENTRADAS
-// Papa.parse("entradas.csv", {
-//     download: true,
-//     header: true,
-//     complete: function (results) {
-//         const data = results.data;
-//         initCompraEntradas(data);
-//     }
-// });
-
-// document.addEventListener("DOMContentLoaded", function () {
-//     // Cargar el archivo CSV
-//     Papa.parse("entradas.csv", {
-//         download: true,
-//         header: true,
-//         complete: function (results) {
-//             const data = results.data;
-//             initCompraEntradas(data);
-//         }
-//     });
-// });
-
-// function initCompraEntradas(data) {
-//     const ciudadSelect = document.getElementById("ciudad");
-//     const fechaSelect = document.getElementById("fecha");
-//     const horarioSelect = document.getElementById("horario");
-//     const cantidadInput = document.getElementById("cantidad");
-//     const entradasInfo = document.getElementById("entradas-info");
-
-//     // Rellenar el selector de ciudades
-//     const ciudades = [...new Set(data.map(item => item.ciudad))];
-//     ciudades.forEach(ciudad => {
-//         const option = document.createElement("option");
-//         option.value = ciudad;
-//         option.textContent = ciudad;
-//         ciudadSelect.appendChild(option);
-//     });
-
-//     // Actualizar fechas según la ciudad seleccionada
-//     ciudadSelect.addEventListener("change", () => {
-//         fechaSelect.innerHTML = ""; // Limpiar fechas
-//         const fechas = [...new Set(data
-//             .filter(item => item.ciudad === ciudadSelect.value)
-//             .map(item => item.fecha)
-//         )];
-//         fechas.forEach(fecha => {
-//             const option = document.createElement("option");
-//             option.value = fecha;
-//             option.textContent = fecha;
-//             fechaSelect.appendChild(option);
-//         });
-//     });
-
-//     // Actualizar horarios según la fecha seleccionada
-//     fechaSelect.addEventListener("change", () => {
-//         horarioSelect.innerHTML = ""; // Limpiar horarios
-//         const horarios = data
-//             .filter(item => item.ciudad === ciudadSelect.value && item.fecha === fechaSelect.value)
-//             .map(item => item.horario);
-//         horarios.forEach(horario => {
-//             const option = document.createElement("option");
-//             option.value = horario;
-//             option.textContent = horario;
-//             horarioSelect.appendChild(option);
-//         });
-//     });
-
-//     // Manejar la compra de entradas
-//     document.getElementById("comprar").addEventListener("click", () => {
-//         const ciudad = ciudadSelect.value;
-//         const fecha = fechaSelect.value;
-//         const horario = horarioSelect.value;
-//         const cantidad = parseInt(cantidadInput.value);
-
-//         // Encontrar el registro en el CSV correspondiente
-//         const registro = data.find(item =>
-//             item.ciudad === ciudad &&
-//             item.fecha === fecha &&
-//             item.horario === horario
-//         );
-
-//         if (registro) {
-//             const asientosDisponibles = parseInt(registro.asientos_disponibles);
-//             if (cantidad > asientosDisponibles) {
-//                 entradasInfo.innerHTML = `<p style="color: red;">No hay suficientes asientos disponibles.</p>`;
-//             } else {
-//                 // Actualizar disponibilidad en el registro
-//                 registro.asientos_disponibles = asientosDisponibles - cantidad;
-//                 entradasInfo.innerHTML = `<p style="color: green;">Compra exitosa. Asientos restantes: ${registro.asientos_disponibles}</p>`;
-//             }
-//         } else {
-//             entradasInfo.innerHTML = `<p style="color: red;">No se pudo completar la compra.</p>`;
-//         }
-//     });
-// }

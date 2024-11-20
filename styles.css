@@ -595,8 +595,9 @@ nav ul li a:hover {
 }
 
 .main-entradas {
-    background-image: url("https://i.etsystatic.com/11810216/r/il/402ad3/3139945119/il_1080xN.3139945119_3j7d.jpg");
-    height: 100vh;
+    background-image: url("https://cdna.artstation.com/p/assets/images/images/071/593/262/large/inkration-studio-back2.jpg?1705510232");
+    /* background-image: url("https://images.alphacoders.com/134/1348804.png"); */
+    background-repeat: no-repeat;
     font-family: "Mulish", sans-serif;
     text-align: center;
     padding: 100px 20px;

@@ -342,9 +342,86 @@ footer .logo img {
 }
 
 
+.breadcrumb {
+
+
+    position: absolute; /* Posiciona la breadcrumb sobre la imagen */
+    top: 100px; /* Baja la breadcrumb más lejos del borde superior */
+    left: 20px; /* Mantiene la separación desde el borde izquierdo */
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 15px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    z-index: 10; /* Asegura que esté encima de la imagen */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+}
+
+
+ 
+
+
+.breadcrumb-item {
+    position: relative; /* Asegura que los pseudo-elementos se posicionen correctamente */
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    content: ">"; /* Define el separador como > */
+    color: #6c757d; /* Color gris para el separador */
+    margin-right: 0.5rem; /* Espaciado a la derecha del separador */
+}
+
+.breadcrumb-item a {
+    text-decoration: underline; /* Subrayado para los enlaces */
+    color: #007BFF; /* Azul para los enlaces */
+    font-weight: bold; /* Negrita para resaltar */
+}
+
+.breadcrumb-item a:hover {
+    color: #0056b3; /* Azul más oscuro al pasar el cursor */
+}
+
+.breadcrumb-item.active {
+    color: #6c757d; /* Gris para el texto activo */
+    font-weight: normal; /* Texto sin negrita */
+    pointer-events: none; /* Desactiva interacción en el elemento activo */
+}
+
 
 
 /***Historia**/
+.historia {
+    position: relative; /* Para permitir posicionamiento absoluto de los elementos internos */
+}
+
+.historia img {
+    width: 100%; /* Asegura que la imagen ocupe todo el ancho del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    display: block; /* Elimina espacios extra debajo de la imagen */
+}
+
+.historia .breadcrumb {
+    position: absolute; /* Posiciona la breadcrumb sobre la imagen */
+    top: 100px; /* Baja la breadcrumb más lejos del borde superior */
+    left: 20px; /* Mantiene la separación desde el borde izquierdo */
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 15px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    z-index: 10; /* Asegura que esté encima de la imagen */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+}
+
+
+.breadcrumb-item a {
+    text-decoration: none; /* Sin subrayado */
+    color: #007BFF; /* Color azul para enlaces */
+}
+
+.breadcrumb-item a:hover {
+    color: #0056b3; /* Azul más oscuro al pasar el cursor */
+}
+
+.breadcrumb-item.active {
+    color: #6c757d; /* Color gris para el texto activo */
+}
 .Historia {
     background-color: #FF4500; /* Fondo gris claro */
     padding: 30px;
@@ -354,7 +431,6 @@ footer .logo img {
 .Historia h1 {
     color: #F2F2F2; /* Color rojo para el título */
 }
-
 .Historia-Mision_Vision {
     display: flex;
     justify-content: space-around; /* Espacio entre las columnas */

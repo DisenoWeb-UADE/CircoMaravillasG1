@@ -154,7 +154,7 @@ footer .logo img {
     border-radius: 0; /* Sin bordes redondeados, para alinearse con los extremos de la página */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra para resaltar */
     z-index: 10; /* Asegura que esté por encima de otros elementos si es necesario */
-    margin-top: 550px; /* Ajusta la distancia desde la parte superior */
+    margin-top: 650px; /* Ajusta la distancia desde la parte superior */
 }
 
 

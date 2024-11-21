@@ -90,8 +90,6 @@ nav ul li a {
 
 
 
-
-
 footer {
     position: relative; /* Cambiado de absolute a relative */
     bottom: 0; /* Esto puede ser opcional */
@@ -120,52 +118,45 @@ footer .logo img {
 
 
 /* Estilo para la sección Introducción */
-.introduccion {
-    background-color: #E9E9E9; /* Fondo claro */
-    padding: 40px 20px; /* Espaciado interno */
-    text-align: center; /* Centrar texto */
-}
+
 
 .introduccion h2 {
-    color: #6650F2; /* Color del título */
-    margin-bottom: 20px; /* Espaciado debajo del título */
+    color: #FFFFFF; /* Color del título */
+    font-size: 2.5rem; /* Tamaño del título */
+    background-color: #CCA352; /* Color de fondo */
+    padding: 10px 20px; /* Espaciado interno para mejorar la apariencia */
+    border-radius: 10px; /* Bordes redondeados */
+    text-align: center; /* Centrar el texto */
+    display: inline-block; /* Ajusta el tamaño del fondo al contenido */
 }
 
 .introduccion p {
-    font-size: 1.1rem; /* Tamaño de fuente */
-    color: #333; /* Color del texto */
+    font-size: 1.2rem; /* Tamaño de fuente */
+    line-height: 1.6; /* Espaciado entre líneas */
+    color: #FFFFFF; /* Color del texto */
 }
 
-/* Estilo para la sección Noticias */
-.noticias {
-    padding: 40px 20px; /* Espaciado interno */
-    background-color:  #0D0D0D; /* Fondo */
-    text-align: center; /* Centrar texto */
 
 
+
+
+
+
+.introduccion {
+    position: relative; /* Permite ajustes precisos */
+    width: 100%; /* Ocupa todo el ancho de la página */
+    height: auto; /* Ajusta automáticamente el alto según el contenido */
+    min-height: 100px; /* Define un alto mínimo para mantener consistencia */
+    padding: 20px; /* Espaciado interno */
+    background-color: rgba(65, 2, 2, 0.7); /* Fondo semitransparente con el color principal */
+    color: white; /* Color del texto */
+    text-align: center; /* Centra el texto */
+    border-radius: 0; /* Sin bordes redondeados, para alinearse con los extremos de la página */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra para resaltar */
+    z-index: 10; /* Asegura que esté por encima de otros elementos si es necesario */
+    margin-top: 550px; /* Ajusta la distancia desde la parte superior */
 }
 
-.noticia-card {
-    display: flex; /* Flex para alinear imagen y texto */
-    margin-bottom: 20px; /* Espaciado entre noticias */
-    border: 1px solid #ddd; /* Borde alrededor de cada noticia */
-    border-radius: 8px; /* Bordes redondeados */
-    overflow: hidden; /* Cortar contenido desbordante */
-}
-
-.noticia-card img {
-    width: 150px; /* Ancho fijo para las imágenes */
-    height: auto; /* Altura automática */
-}
-
-.noticia-descripcion {
-    padding: 10px; /* Espaciado interno */
-}
-
-.noticia-descripcion h3 {
-    margin: 0 0 10px; /* Espaciado del título */
-    color: #6650F2; /* Color del título */
-}
 
 
 
@@ -312,39 +303,8 @@ footer .logo img {
 }
 
 
-/* Estilo para la sección Suscripción */
-.suscripcion {
-    background-color: #6650F2; /* Fondo */
-    padding: 40px 20px; /* Espaciado interno */
-    text-align: center; /* Centrar contenido */
-}
-
-.suscripcion-form {
-    margin-top: 20px; /* Margen superior */
-}
 
 
-
-
-.suscripcion-form input[type="email"] {
-    padding: 10px; /* Espaciado interno */
-    border: 1px solid #ddd; /* Borde */
-    border-radius: 5px; /* Bordes redondeados */
-    width: 250px; /* Ancho fijo */
-}
-
-.suscripcion-form button {
-    padding: 10px 20px; /* Espaciado interno */
-    background-color: #6650F2; /* Color de fondo */
-    color: white; /* Color del texto */
-    border: none; /* Sin borde */
-    border-radius: 5px; /* Bordes redondeados */
-    cursor: pointer; /* Cambiar cursor al pasar por encima */
-}
-
-.suscripcion-form button:hover {
-    background-color: #5741C2; /* Color al pasar el cursor */
-}
 
 
 

@@ -71,124 +71,127 @@
             </div>
 
             <div class="flex flex-col md:flex-row md:justify-evenly mt-16 mx-auto md:mx-28 gap-x-10">
-              <form id="form-entradas" class="basis-1/2 flex flex-col bg-red-950/85 rounded-xl text-left gap-5 mx-auto py-4 px-2 md:p-10">
-                <div class="form-inputs">
-                  <label for="city">Ciudad</label>
-                  <select id="city" class="" required>
-                    <option value="">Seleccioná tu ciudad</option>
-                    <optgroup label="Región Metropolitana (AMBA)">
-                      <option value="CABA">Buenos Aires (CABA)</option>
-                      <option value="La Plata">La Plata</option>
-                      <option value="Lomas de Zamora">Lomas de Zamora</option>
-                      <option value="San Isidro">San Isidro</option>
-                    </optgroup>
-                    <optgroup label="Región Pampeana">
-                      <option value="Rosario">Rosario (Santa Fe)</option>
-                      <option value="Santa Fe">Santa Fe (capital)</option>
-                      <option value="Mar del Plata">Mar del Plata</option>
-                      <option value="Tandil">Tandil</option>
-                    </optgroup>
-                    <optgroup label="Región Norte (NEA y NOA)">
-                      <option value="Salta">Salta (capital)</option>
-                      <option value="Tucumán">Tucumán (San Miguel de Tucumán)</option>
-                      <option value="Posadas">Posadas (Misiones)</option>
-                    </optgroup>
-                    <optgroup label="Región Cuyo">
-                      <option value="Mendoza">Mendoza (capital)</option>
-                    </optgroup>
-                    <optgroup label="Región Patagonia">
-                      <option value="Bariloche">Bariloche (Río Negro)</option>
-                    </optgroup>
-                    <optgroup label="Región Centro">
-                      <option value="Villa Carlos Paz">Villa Carlos Paz</option>
-                    </optgroup>
-                  </select>
-                </div>
-
-                <div class="flex flex-col md:flex-row gap-x-10">
+              <div clas="flex flex-col">
+                <form id="form-entradas" class="basis-1/2 flex flex-col bg-red-950/85 rounded-xl text-left gap-5 mx-auto py-4 px-2 md:p-10">
                   <div class="form-inputs">
-                    <label for="date">Fecha</label>
-                    <input id="date" type="date" class="w-auto md:w-[16rem]" required/>
-                  </div>
-
-                  <div class="form-inputs">
-                    <label for="time">Horario</label>
-                    <select id="time" class="w-auto md:w-[16rem]" required>
-                      <option value="">Seleccioná un horario disponible</option>
-                      <option value="16:00">16:00</option>
-                      <option value="18:00">18:00</option>
-                      <option value="20:00">20:00</option>
-                      <option value="20:00">22:00</option>
+                    <label for="city">Ciudad</label>
+                    <select id="city" class="" required>
+                      <option value="">Seleccioná tu ciudad</option>
+                      <optgroup label="Región Metropolitana (AMBA)">
+                        <option value="CABA">Buenos Aires (CABA)</option>
+                        <option value="La Plata">La Plata</option>
+                        <option value="Lomas de Zamora">Lomas de Zamora</option>
+                        <option value="San Isidro">San Isidro</option>
+                      </optgroup>
+                      <optgroup label="Región Pampeana">
+                        <option value="Rosario">Rosario (Santa Fe)</option>
+                        <option value="Santa Fe">Santa Fe (capital)</option>
+                        <option value="Mar del Plata">Mar del Plata</option>
+                        <option value="Tandil">Tandil</option>
+                      </optgroup>
+                      <optgroup label="Región Norte (NEA y NOA)">
+                        <option value="Salta">Salta (capital)</option>
+                        <option value="Tucumán">Tucumán (San Miguel de Tucumán)</option>
+                        <option value="Posadas">Posadas (Misiones)</option>
+                      </optgroup>
+                      <optgroup label="Región Cuyo">
+                        <option value="Mendoza">Mendoza (capital)</option>
+                      </optgroup>
+                      <optgroup label="Región Patagonia">
+                        <option value="Bariloche">Bariloche (Río Negro)</option>
+                      </optgroup>
+                      <optgroup label="Región Centro">
+                        <option value="Villa Carlos Paz">Villa Carlos Paz</option>
+                      </optgroup>
                     </select>
                   </div>
-                </div>
-
-                <div class="flex flex-col md:flex-row gap-x-10">
-                  <div class="form-inputs">
-                    <label for="category">Categoría de entradas</label>
-                    <select id="category" class="w-auto md:w-[16rem]" required>
-                      <option value="">Elegí la categoría de tu entrada</option>
-                      <option value="Normal">Normal ($20,000)</option>
-                      <option value="Pack Familiar">Pack Familiar (4 x $70,000)</option>
-                      <option value="Meet & Greet">Meet & Greet ($50,000)</option>
-                      <option value="VIP">VIP ($100,000)</option>
-                    </select>
+  
+                  <div class="flex flex-col md:flex-row gap-x-10">
+                    <div class="form-inputs">
+                      <label for="date">Fecha</label>
+                      <input id="date" type="date" class="w-auto md:w-[16rem]" required/>
+                    </div>
+  
+                    <div class="form-inputs">
+                      <label for="time">Horario</label>
+                      <select id="time" class="w-auto md:w-[16rem]" required>
+                        <option value="">Seleccioná un horario disponible</option>
+                        <option value="16:00">16:00</option>
+                        <option value="18:00">18:00</option>
+                        <option value="20:00">20:00</option>
+                        <option value="20:00">22:00</option>
+                      </select>
+                    </div>
                   </div>
-
+  
+                  <div class="flex flex-col md:flex-row gap-x-10">
+                    <div class="form-inputs">
+                      <label for="category">Categoría de entradas</label>
+                      <select id="category" class="w-auto md:w-[16rem]" required>
+                        <option value="">Elegí la categoría de tu entrada</option>
+                        <option value="Normal">Normal ($20,000)</option>
+                        <option value="Pack Familiar">Pack Familiar (4 x $70,000)</option>
+                        <option value="Meet & Greet">Meet & Greet ($50,000)</option>
+                        <option value="VIP">VIP ($100,000)</option>
+                      </select>
+                    </div>
+  
+                    <div class="form-inputs">
+                      <label for="quantity">Cantidad de entradas</label>
+                      <input id="quantity" type="number" min="1" max="10" placeholder="Ingresá la cantidad de entradas" class="w-auto md:w-[16rem]" required/>
+                    </div>
+                  </div>
+                  
                   <div class="form-inputs">
-                    <label for="quantity">Cantidad de entradas</label>
-                    <input id="quantity" type="number" min="1" max="10" placeholder="Ingresá la cantidad de entradas" class="w-auto md:w-[16rem]" required/>
+                    <label for="mail">Mail de contacto</label>
+                    <input id="mail" placeholder="Ecribí tu correo para la confirmación" required/>
+                  </div>
+  
+                  <h id="form-error" class="text-red-300"></h>
+  
+                  <div class="mt-2">
+                    <input type="checkbox" id="discapacidad" name="discapacidad-checkbox" />
+                    <label for="discapacidad" class="text-sm font-bold border-none focus:border-none">¿Atenderá una persona con discapacidad?</label>
+                  </div>
+  
+                  <div id="informacion-adicional" class="mt-2 hidden">
+                    <a href="preguntasFrecuentes.html" class="text-blue-500 underline">Más información sobre las facilidades para personas con discapacidad</a>
+                    <p class="text-green-600 mt-3">* La entrada para la persona con discapacidad será gratuita presentando el CUD.</p>
+                  </div>
+  
+  
+                  <div class="bg-[#cca352] w-fit self-center px-5 py-2 rounded-md flex gap-x-1">
+                    <svg id="svg" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                    </svg>                  
+                    <button id="form-submit" type="submit" class="disabled:cursor-not-allowed" disabled>Ir a pagar</button>
+                  </div>
+                </form>
+  
+                <div id="continuacion" class="flex flex-col mt-10 text-xl font-bold bg-gray-950/60 py-10 content-center md:w-[40rem] mx-auto px-5 rounded-md hidden">
+                  <h1 class="text-2xl">Resumen de compra</h1>
+                  <h id="resumen"></h>
+                  <div class="flex flex-col gap-y-3 mt-3">
+                    <a href="https://link.mercadopago.com.ar/buscadogqrejemplo" target="_blank"><button id="boton-confirmacion" class="bg-green-950 text-white w-fit px-3 py-1 rounded-md self-center hover:bg-green-900">Si, quiero continuar con el pago</button></a>
+                    <button id="boton-arrepentimiento" class="bg-red-950 text-white w-fit px-3 py-1 rounded-md self-center hover:bg-red-900">No, me arrepiento</button>
                   </div>
                 </div>
-                
-                <div class="form-inputs">
-                  <label for="mail">Mail de contacto</label>
-                  <input id="mail" placeholder="Ecribí tu correo para la confirmación" required/>
+      
+                <div id="toast-success" class="flex items-center w-full max-w-xs p-4 mb-2  text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800 mt-10 mx-auto hidden" role="alert">
+                  <div class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-green-500 bg-green-100 rounded-lg dark:bg-green-800 dark:text-green-200">
+                      <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                          <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+                      </svg>
+                      <span class="sr-only">Check icon</span>
+                  </div>
+                  <div class="ms-3 text-sm font-normal flex flex-col">
+                    <h>Confirmación enviada al mail</h>
+                    <a href="index.html"><h class="hover:text-gray-300 hover:underline">Volver al menú principal</h></a>
+                  </div>
                 </div>
+              </div>
 
-                <h id="form-error" class="text-red-300"></h>
-
-                <div class="mt-2">
-                  <input type="checkbox" id="discapacidad" name="discapacidad-checkbox" />
-                  <label for="discapacidad" class="text-sm font-bold border-none focus:border-none">¿Atenderá una persona con discapacidad?</label>
-                </div>
-
-                <div id="informacion-adicional" class="mt-2 hidden">
-                  <a href="preguntasFrecuentes.html" class="text-blue-500 underline">Más información sobre las facilidades para personas con discapacidad</a>
-                  <p class="text-green-600 mt-3">* La entrada para la persona con discapacidad será gratuita presentando el CUD.</p>
-                </div>
-
-
-                <div class="bg-[#cca352] w-fit self-center px-5 py-2 rounded-md flex gap-x-1">
-                  <svg id="svg" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                  </svg>                  
-                  <button id="form-submit" type="submit" class="disabled:cursor-not-allowed" disabled>Ir a pagar</button>
-                </div>
-              </form>
               <div id="map"></div>
-            </div>
-          </div>
-
-          <div id="continuacion" class="flex flex-col mt-10 text-xl font-bold bg-gray-950/60 py-10 content-center w-fit mx-auto px-5 rounded-md hidden">
-            <h1 class="text-2xl">Resumen de compra</h1>
-            <h id="resumen"></h>
-            <div class="flex flex-col gap-y-3 mt-3">
-              <a href="https://link.mercadopago.com.ar/buscadogqrejemplo" target="_blank"><button id="boton-confirmacion" class="bg-green-950 text-white w-fit px-3 py-1 rounded-md self-center hover:bg-green-900">Si, quiero continuar con el pago</button></a>
-              <button id="boton-arrepentimiento" class="bg-red-950 text-white w-fit px-3 py-1 rounded-md self-center hover:bg-red-900">No, me arrepiento</button>
-            </div>
-          </div>
-
-          <div id="toast-success" class="flex items-center w-full max-w-xs p-4 mb-2  text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800 mt-10 ml-2 md:ml-56 hidden" role="alert">
-            <div class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-green-500 bg-green-100 rounded-lg dark:bg-green-800 dark:text-green-200">
-                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
-                </svg>
-                <span class="sr-only">Check icon</span>
-            </div>
-            <div class="ms-3 text-sm font-normal flex flex-col">
-              <h>Confirmación enviada al mail</h>
-              <a href="index.html"><h class="hover:text-gray-300 hover:underline">Volver al menú principal</h></a>
             </div>
           </div>
         </section>

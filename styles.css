@@ -22,7 +22,7 @@ html, body {
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: "Mulish", sans-serif;
     color: white;
     overflow-x: hidden;
 }
@@ -202,7 +202,6 @@ footer .logo img {
 
 /* Personalización del texto dentro de la tarjeta */
 .card-body h5 {
-    font-family: 'Mulish', cursive; /* Tipo de letra personalizada */
     color: #fff; /* Color del texto */
 
     background-color: #CCA352; /* Color de fondo (puedes cambiarlo al que desees) */
@@ -214,7 +213,6 @@ footer .logo img {
 }
 
 .card-body p {
-    font-family: 'Mulish', sans-serif; /* Tipo de letra para el texto descriptivo */
     color: #fff; /* Color del texto */
 }
 
@@ -225,7 +223,6 @@ footer .logo img {
     gap: 8px; /* Espacio entre el icono y el texto */
     background-color: #CCA352; /* Color dorado del botón */
     color: white; /* Color del texto */
-    font-family: 'Arial', sans-serif; /* Fuente del texto */
     font-size: 16px; /* Tamaño de la fuente */
     padding: 10px 20px; /* Espaciado interno */
     border: none; /* Sin bordes */
@@ -313,7 +310,6 @@ footer .logo img {
     background-image: url("./Imagenes/world-theatre-day-celebration.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    font-family: "Mulish", sans-serif;
 }
 
 .contacto h1 {
@@ -369,14 +365,11 @@ footer .logo img {
 
 /***Historia**/
 
-.historia {
-    font-family: "Mulish", sans-serif;
-}
-
 .historia img {
     width: 100%; /* Asegura que la imagen ocupe todo el ancho del contenedor */
     height: auto; /* Mantiene la proporción de la imagen */
     display: block; /* Elimina espacios extra debajo de la imagen */
+    border-radius: 0px;
 }
 
 .historia .breadcrumb {
@@ -404,19 +397,31 @@ footer .logo img {
     color: #9ca3af; /* Color gris para el texto activo */
 }
 .Historia {
-    background-color: #FF4500; /* Fondo gris claro */
+    /* background-color: #cca352; */
     padding: 30px;
     text-align: center;
 }
 
-.Historia h1 {
-    color: #F2F2F2; /* Color rojo para el título */
+.Historia h1,
+.mision h2,
+.vision h2,
+.Historia-importancia-ilusion h2 {
+    color: #cca352; /* Color rojo para el título */
+    font-weight: bold;
+    font-size: 2rem;
+    font-family: "Rum Raisin", sans-serif;
+    letter-spacing: 2px;
 }
+
+.Historia h1 {
+    font-size: 2.5rem;
+}
+
 .Historia-Mision_Vision {
     display: flex;
     justify-content: space-around; /* Espacio entre las columnas */
     padding: 30px;
-    background-color: #6650F2; /* Fondo amarillo claro */
+    /* background-color: #cca352; */
 }
 
 .mision, .vision {
@@ -424,26 +429,20 @@ footer .logo img {
 }
 
 .Historia-importancia-ilusion {
-    background-color: #FFD700; /* Fondo verde claro */
+    /* background-color: #cca352; */
     padding: 30px;
-    text-align: center;
-}
-
-.Historia-importancia-ilusion h2 {
-    color: #6650F2; /* Color verde para el subtítulo */
     text-align: center;
 }
 
 .Historia-importancia-ilusion p {
     font-size: 1.1em; /* Tamaño de fuente */
     line-height: 1.6; /* Espaciado entre líneas */
-    color: #6650F2; /* Color del texto del párrafo */
+    color: white; /* Color del texto del párrafo */
 }
 
 .historia img {
     width: 2000px; /* Ajusta el ancho según lo que necesites */
     height: 1000px; /* Mantiene las proporciones de la imagen */
-    border-radius: 10px; /* Opcional: añade esquinas redondeadas */
 }
 
 
@@ -477,7 +476,6 @@ footer .logo img {
     overflow: hidden; /* Evita que haya barras de desplazamiento */
 
     padding-top: 100px;  /* Espacio adicional arriba */
-    font-family: "Mulish", sans-serif;
 }
 .faq-background {
     width: 100%; /* Hacer que la imagen de fondo cubra el contenedor */
@@ -556,7 +554,6 @@ nav ul li a:hover {
     font-size: 2rem;
     font-weight: bold;
     margin-bottom: 10px;
-    /* font-family: "Henny Penny", system-ui; */
 }
 
 .mapa-descripcion p {
@@ -573,9 +570,7 @@ nav ul li a:hover {
 
 .main-entradas {
     background-image: url("https://cdna.artstation.com/p/assets/images/images/071/593/262/large/inkration-studio-back2.jpg?1705510232");
-    /* background-image: url("https://images.alphacoders.com/134/1348804.png"); */
     background-repeat: no-repeat;
-    font-family: "Mulish", sans-serif;
     text-align: center;
     padding: 100px 20px;
 }
@@ -642,5 +637,10 @@ nav ul li a:hover {
     .espectaculos {
         width: fit-content;
         align-self: center;
+    }
+
+    .historia img {
+        width: auto;
+        height: 100vh;
     }
 }

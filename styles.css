@@ -180,7 +180,7 @@ footer .logo img {
 }
 .main-espectaculos .breadcrumb {
     position: absolute; /* Esto asegura que esté sobre otros elementos */
-    top: 20px; /* Ajusta la distancia desde la parte superior del contenedor */
+    top: 70px; /* Ajusta la distancia desde la parte superior del contenedor */
     left: 20px; /* Ajusta la distancia desde la izquierda */
     background-color: rgba(0, 0, 0, 0.7); /* Fondo semitransparente */
     color: white;
@@ -206,7 +206,53 @@ footer .logo img {
 }
 
 .main-espectaculos .cards-grid {
-    margin-top: 90px; /* Ajusta según la altura de la breadcrumb */
+    margin-top: 130px; /* Ajusta según la altura de la breadcrumb */
+}
+
+/* Personalización del texto dentro de la tarjeta */
+.card-body h5 {
+    font-family: 'Mulish', cursive; /* Tipo de letra personalizada */
+    color: #fff; /* Color del texto */
+
+    background-color: #CCA352; /* Color de fondo (puedes cambiarlo al que desees) */
+    padding: 10px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    text-align: center; /* Centra el texto dentro del fondo */
+    margin-bottom: 10px; /* Espaciado inferior */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+.card-body p {
+    font-family: 'Mulish', sans-serif; /* Tipo de letra para el texto descriptivo */
+    color: #fff; /* Color del texto */
+}
+
+/* Botón personalizado */
+.button-espectaculos {
+    display: inline-flex; /* Asegura la alineación del icono y texto */
+    align-items: center; /* Centra el contenido verticalmente */
+    gap: 8px; /* Espacio entre el icono y el texto */
+    background-color: #CCA352; /* Color dorado del botón */
+    color: white; /* Color del texto */
+    font-family: 'Arial', sans-serif; /* Fuente del texto */
+    font-size: 16px; /* Tamaño de la fuente */
+    padding: 10px 20px; /* Espaciado interno */
+    border: none; /* Sin bordes */
+    border-radius: 10px; /* Bordes redondeados */
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Efectos de transición */
+}
+
+/* Efecto hover */
+.button-espectaculos:hover {
+    background-color: #B8863B; /* Color al pasar el cursor */
+    transform: scale(1.05); /* Zoom al pasar el mouse */
+}
+
+/* Estilo del icono dentro del botón */
+.button-espectaculos i {
+    font-size: 18px; /* Tamaño del icono */
 }
 
 /***/

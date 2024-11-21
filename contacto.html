@@ -5,24 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página del Circo</title>
     <link rel="stylesheet" href="styles.css">
+    <script rel="stylesheet" src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css"  rel="stylesheet" />
 </head>
 <body>
     <header>
-        <div class="logo-header">
-            <a href="index.html">
-                <img src="Imagenes/Logo.png" alt="Circo Maravillas">
-            </a>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="espectaculos.html">Espectáculos</a></li>
-                <li><a href="entradas.html">Entradas</a></li>
-                <li><a href="historia.html">Historia</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-                <li><a href="https://www.figma.com/proto/s7MhaW0JMmg2PaqQ18eWU1/Entrega-final---Proyecto-Circo-Maravillas?node-id=0-397&node-type=canvas&t=FnF3sknuUF2QZoab-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=0%3A397" target="_blank" >Prototipo</a></li>
-                <li><a href="preguntasFrecuentes.html">Preguntas Frecuentes</a></li>
-            </ul>
-        </nav>
+        <nav class="bg-black/50 w-screen tw-navbar">
+            <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+              <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <img src="Imagenes/Logo.png" class="h-16" alt="Logo" />
+              </a>
+              <button data-collapse-toggle="tw-navbar-menu" type="button" class="inline-flex items-center mr-3 p-2 w-10 h-10 justify-center text-sm text-white rounded-lg md:hidden focus:outline-none" aria-controls="tw-navbar-menu" aria-expanded="false">
+                <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 17 14">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                </svg>
+              </button>
+              <div class="hidden w-full h-screen md:block md:h-auto md:w-auto" id="tw-navbar-menu">
+                <ul class="flex flex-col font-medium mt-4 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent">
+                  <li>
+                    <a href="espectaculos.html" class="block py-2 px-3 md:p-0 rounded text-white border-b-2 border-white md:border-0">Espectáculos</a>
+                  </li>
+                  <li>
+                    <a href="entradas.html" class="block py-2 px-3 md:p-0 text-white rounded md:border-0 border-b-2 border-white">Entradas</a>
+                  </li>
+                  <li>
+                    <a href="historia.html" class="block py-2 px-3 md:p-0 rounded md:border-0 text-white border-b-2 border-white">Nosotros</a>
+                  </li>
+                  <li>
+                    <a href="contacto.html" class="block py-2 px-3 md:p-0 rounded md:border-0 text-red-700 border-b-2 border-white">Contacto</a>
+                  </li>
+                  <li>
+                    <a href="preguntasFrecuentes.html" class="block py-2 px-3 md:p-0 rounded md:border-0 text-white border-b-2 border-white">Preguntas Frecuentes</a>
+                  </li>
+                  <li>
+                    <a href="https://www.figma.com/proto/s7MhaW0JMmg2PaqQ18eWU1/Entrega-final---Proyecto-Circo-Maravillas?node-id=0-397&node-type=canvas&t=FnF3sknuUF2QZoab-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=0%3A397" target="_blank" class="block py-2 px-3 text-white rounded border-b-2 border-white md:border-0 md:p-0">Prototipo</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+        </nav>  
     </header>
 
     <main>
@@ -92,6 +113,6 @@
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
 </body>
 </html>

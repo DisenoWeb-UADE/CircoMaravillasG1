@@ -6,29 +6,48 @@
     <title>Página del Circo</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-    <script rel="stylesheet" src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script rel="stylesheet" src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css"  rel="stylesheet" />
 </head>
 <body>
-  <header>
-    <div class="logo-header">
-        <a href="index.html">
-            <img src="Imagenes/Logo.png" alt="Circo Maravillas">
-        </a>
-    </div>
-    <nav>
-        <ul>
-            <li><a href="espectaculos.html">Espectáculos</a></li>
-            <li><a href="entradas.html">Entradas</a></li>
-            <li><a href="historia.html">Historia</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-            <li><a href="https://www.figma.com/proto/s7MhaW0JMmg2PaqQ18eWU1/Entrega-final---Proyecto-Circo-Maravillas?node-id=0-397&node-type=canvas&t=FnF3sknuUF2QZoab-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=0%3A397" target="_blank" >Prototipo</a></li>
-            <li><a href="preguntasFrecuentes.html">Preguntas Frecuentes</a></li>
-        </ul>
-    </nav>
-</header>
+    <header>
+      <nav class="bg-black/50 w-screen">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+          <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+              <img src="Imagenes/Logo.png" class="h-16" alt="Flowbite Logo" />
+          </a>
+          <button data-collapse-toggle="navbar-solid-bg" type="button" class="inline-flex items-center mr-3 p-2 w-10 h-10 justify-center text-sm text-white rounded-lg md:hidden focus:outline-none" aria-controls="navbar-solid-bg" aria-expanded="false">
+              <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 17 14">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+              </svg>
+          </button>
+          <div class="hidden w-full w-full h-screen md:block md:h-auto md:w-auto" id="navbar-solid-bg">
+            <ul class="flex flex-col justify-start font-medium mt-4 rounded-lg bg-black/85 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent">
+              <li>
+                <a href="espectaculos.html" class="block py-2 px-3 md:p-0 rounded text-white border-b-2 border-white md:border-0" aria-current="page">Espectáculos</a>
+              </li>
+              <li>
+                <a href="entradas.html" class="block py-2 px-3 md:p-0 rounded md:border-0 text-red-700 border-b-2 border-white">Entradas</a>
+              </li>
+              <li>
+                <a href="historia.html" class="block py-2 px-3 md:p-0 text-white rounded md:border-0 border-b-2 border-white">Nosotros</a>
+              </li>
+              <li>
+                <a href="contacto.html" class="block py-2 px-3 md:p-0 text-white rounded md:border-0 border-b-2 border-white">Contacto</a>
+              </li>
+              <li>
+                <a href="https://www.figma.com/proto/s7MhaW0JMmg2PaqQ18eWU1/Entrega-final---Proyecto-Circo-Maravillas?node-id=0-397&node-type=canvas&t=FnF3sknuUF2QZoab-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=0%3A397" target="_blank" class="block py-2 px-3 text-white rounded border-b-2 border-white md:border-0 md:p-0">Prototipo</a>
+              </li>
+              <li>
+                <a href="preguntasFrecuentes.html" class="block py-2 px-3 md:p-0 text-white rounded md:border-0 border-b-2 border-white">Preguntas Frecuentes</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
 
     <main class="main-entradas bg-gradient-to-b from-stone-950 to-red-950 h-fit">
         <section>
@@ -52,7 +71,7 @@
             </div>
 
             <div class="flex flex-col md:flex-row md:justify-evenly mt-16 md:mx-28 gap-x-10">
-              <form id="form-entradas" class="flex flex-col bg-red-950/85 rounded-xl text-left gap-5 mx-auto py-4 px-2 md:p-10">
+              <form id="form-entradas" class="basis-1/2 flex flex-col bg-red-950/85 rounded-xl text-left gap-5 mx-auto py-4 px-2 md:p-10">
                 <div class="form-inputs">
                   <label for="city">Ciudad</label>
                   <select id="city" class="" required>
@@ -87,12 +106,12 @@
                 </div>
 
                 <div class="flex flex-col md:flex-row gap-x-10">
-                  <div class="form-inputs">
+                  <div class="form-inputs basis-1/2">
                     <label for="date">Fecha</label>
                     <input id="date" type="date" required/>
                   </div>
 
-                  <div class="form-inputs">
+                  <div class="form-inputs basis-1/2">
                     <label for="time">Horario</label>
                     <select id="time" required>
                       <option value="">Seleccioná un horario disponible</option>
@@ -105,7 +124,7 @@
                 </div>
 
                 <div class="flex flex-col md:flex-row gap-x-10">
-                  <div class="form-inputs">
+                  <div class="form-inputs basis-1/2">
                     <label for="category">Categoría de entradas</label>
                     <select id="category" required>
                       <option value="">Elegí la categoría de tu entrada</option>
@@ -116,7 +135,7 @@
                     </select>
                   </div>
 
-                  <div class="form-inputs">
+                  <div class="form-inputs basis-1/2">
                     <label for="quantity">Cantidad de entradas</label>
                     <input id="quantity" type="number" min="1" max="10" placeholder="Ingresá la cantidad de entradas" required/>
                   </div>
@@ -131,7 +150,7 @@
 
                 <div class="mt-2">
                   <input type="checkbox" id="discapacidad" name="discapacidad-checkbox" />
-                  <label for="discapacidad" class="text-sm font-bold">¿Atenderá una persona con discapacidad?</label>
+                  <label for="discapacidad" class="text-sm font-bold border-none focus:border-none">¿Atenderá una persona con discapacidad?</label>
                 </div>
 
                 <div id="informacion-adicional" class="mt-2 hidden">
@@ -147,7 +166,7 @@
                   <button id="form-submit" type="submit" class="disabled:cursor-not-allowed" disabled>Ir a pagar</button>
                 </div>
               </form>
-              <div id="map"></div>
+              <div id="map" class="basis-1/2"></div>
             </div>
           </div>
 
@@ -160,7 +179,7 @@
             </div>
           </div>
 
-          <div id="toast-success" class="flex items-center w-full max-w-xs p-4 mb-4 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800 mt-10 ml-2 md:ml-56 hidden" role="alert">
+          <div id="toast-success" class="flex items-center w-full max-w-xs p-4 mb-2  text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800 mt-10 ml-2 md:ml-56 hidden" role="alert">
             <div class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-green-500 bg-green-100 rounded-lg dark:bg-green-800 dark:text-green-200">
                 <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>

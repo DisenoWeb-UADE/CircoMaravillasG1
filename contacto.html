@@ -35,10 +35,10 @@
                     <a href="contacto.html" class="block py-2 px-3 md:p-0 rounded md:border-0 text-red-700 border-b-2 border-white">Contacto</a>
                   </li>
                   <li>
-                    <a href="preguntasFrecuentes.html" class="block py-2 px-3 md:p-0 rounded md:border-0 text-white border-b-2 border-white">Preguntas Frecuentes</a>
+                    <a href="https://www.figma.com/proto/s7MhaW0JMmg2PaqQ18eWU1/Entrega-final---Proyecto-Circo-Maravillas?node-id=0-397&node-type=canvas&t=FnF3sknuUF2QZoab-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=0%3A397" target="_blank" class="block py-2 px-3 text-white rounded border-b-2 border-white md:border-0 md:p-0">Prototipo</a>
                   </li>
                   <li>
-                    <a href="https://www.figma.com/proto/s7MhaW0JMmg2PaqQ18eWU1/Entrega-final---Proyecto-Circo-Maravillas?node-id=0-397&node-type=canvas&t=FnF3sknuUF2QZoab-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=0%3A397" target="_blank" class="block py-2 px-3 text-white rounded border-b-2 border-white md:border-0 md:p-0">Prototipo</a>
+                    <a href="preguntasFrecuentes.html" class="block py-2 px-3 md:p-0 rounded md:border-0 text-white border-b-2 border-white">Preguntas Frecuentes</a>
                   </li>
                 </ul>
               </div>
@@ -47,56 +47,61 @@
     </header>
 
     <main>
-        <section class="contact">
-            
-            <h2>Contacto</h2>
-            <!-- Breadcrumb -->
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Contacto/li>
-                </ol>
-            </nav>
-         
+      <section class="contacto h-fit pb-10">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Contacto</li>
+          </ol>
+        </nav>
 
-            <!-- Descripción de contacto -->
-            <div class="contacto-descripcion">
-                <p>Para más información, puedes contactarnos a través de los siguientes medios:</p>
-                <ul class="contact-info">
-                    <li><strong>Dirección:</strong> Lima 757, C1073 Cdad. Autónoma de Buenos Aires</li>
-                    <li><strong>Teléfono:</strong> +541576625199</li>
-                </ul>
-            </div>
+        <div class="pt-60 px-16">
+          <div class="bg-red-950/85 mx-auto pb-5 rounded-lg md:rounded-tr-[4.5rem]">
+            <h1 class="bg-[#cca352] text-right w-fit justify-self-end text-4xl text-white font-bold md:rounded-tr-full rounded-bl-full mb-5 px-10 md:px-48 py-2">Contacto</h1>
+            <form id="contact-form" class="flex flex-col rounded-xl text-left gap-5 py-16">
 
-            <!-- Formulario de contacto -->
-            <form class="contact-form" onsubmit="alert('Mensaje enviado'); return false;">
-                <label for="name">Nombre</label>
-                <input type="text" id="name" name="name" required placeholder="Tu nombre">
+              <div class="form-inputs px-5 md:px-16">
+                <label for="contact-name">Nombre y apellido</label>
+                <input id="contact-name" placeholder="Ecribí tu nombre y apellido" required/>
+              </div>
+              
+              <div class="form-inputs px-5 md:px-16">
+                <label for="contact-mail">Mail de contacto</label>
+                <input id="contact-mail" value="" placeholder="Ecribí tu correo electrónico" required/>
+              </div>
 
-                <label for="email">Correo electrónico</label>
-                <input type="email" id="email" name="email" required placeholder="Tu correo electrónico">
+              <h id="contact-error" class="text-red-300 ml-5 md:ml-16 hidden">Ingrese una dirección de mail correcta</h>
 
-                <label for="subject">Asunto</label>
-                <input type="text" id="subject" name="subject" required placeholder="Asunto del mensaje">
+              <div class="form-inputs px-5 md:px-16">
+                <label for="contact-subject">Asunto</label>
+                <input id="contact-subject" placeholder="Ecribí el motivo de tu contacto" required/>
+              </div>
 
-                <label for="message">Mensaje</label>
-                <textarea id="message" name="message" required placeholder="Escribe tu mensaje aquí"></textarea>
-
-                <button type="submit">Enviar mensaje</button>
+              <div class="form-inputs px-5 md:px-16">
+                <label for="contact-description">Descripción</label>
+                <textarea id="contact-description" placeholder="Ecribí el detalle de tu contacto" required></textarea>
+              </div>
+              
+              <button id="contact-submit" type="submit" class="bg-[#cca352] w-fit self-center px-5 py-2 rounded-md disabled:cursor-not-allowed">Enviar</button>
             </form>
+          </div>
+        </div>
 
-            <!-- Mapa insertado con iframe de Google Maps -->
-            <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13133.961219384153!2d-58.3819186!3d-34.617048!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccaba6ac89b35%3A0x1a2dc24cbca665a7!2sUADE!5e0!3m2!1ses!2sar!4v1726943377086!5m2!1ses!2sar"
-                        width="600" 
-                        height="450" 
-                        style="border:0;"
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-            </div>
-        </section>
+        <div id="contact-toast-success" class="flex items-center w-full max-w-xs p-4 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800 mx-auto mt-10 hidden" role="alert">
+          <div class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-green-500 bg-green-100 rounded-lg dark:bg-green-800 dark:text-green-200">
+              <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+              </svg>
+              <span class="sr-only">Check icon</span>
+          </div>
+          <div class="ms-3 text-sm font-normal flex flex-col">
+            <h>Consulta enviada correctamente</h>
+            <a href="contacto.html"><h class="hover:text-gray-300 hover:underline">Enviar otra consulta</h></a>
+          </div>
+        </div>
+      </section>
+
+      </section>
     </main>
 
     <footer class="bg-dark text-white py-4">
@@ -113,6 +118,7 @@
         </div>
     </footer>
 
+    <script src="scrips.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
 </body>
 </html>

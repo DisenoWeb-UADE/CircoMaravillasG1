@@ -54,6 +54,36 @@ let losVoladores = "Los Voladores";
 let losVoladores_desc = "Un equipo de acróbatas se apodera del centro de la carpa con una energía arrolladora. En perfecta sincronía, ejecutan acrobacias en el aire, giros imposibles y saltos que dejan sin aliento a grandes y chicos. Su espectáculo combina fuerza, agilidad y carisma, creando un torbellino de emociones que transforma el escenario en un lugar mágico y lleno de adrenalina.";
 
 document.addEventListener("DOMContentLoaded", () => {
+    // <----- CONTACTO ----->
+    const contact_mail = document.getElementById("contact-mail");
+    const contact_error = document.getElementById("contact-error");
+    const contact_form = document.getElementById("contact-form");
+    const contact_confirmacion = document.getElementById("contact-toast-success");
+    const contact_submit = document.getElementById("contact-submit");
+
+    if(contact_mail) {
+        contact_mail.addEventListener("input", (e) => {
+            if(!emailValido(e.target.value)) {
+                contact_error.style.display = "block";
+                contact_submit.disabled = true;
+            } else {
+                contact_error.style.display = "none";
+                contact_submit.disabled = false;
+            }
+        })
+    }
+
+    if(contact_form) {
+        contact_form.addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            contact_confirmacion.style.display = "flex";
+            window.scrollTo({ top: 830, behavior: 'smooth' });
+        })
+    }
+
+    // <----- ENTRADAS ----->
+    
     // ELECCION DEL ESPECTACULO
     const espectaculos = document.getElementById("espectaculos");
     const espectaculo_elegido = document.getElementById("espectaculo-elegido");
@@ -61,46 +91,51 @@ document.addEventListener("DOMContentLoaded", () => {
     const espectaculo_desc = document.getElementById("espectaculo-descripcion");
     let espectaculo;
 
-    espectaculos.addEventListener("change", (e) => {
-        espectaculo = e.target.value;
-
-        switch(e.target.value) {
-            case "Payaso de Fuego":
-                espectaculo_elegido.style.display = "flex";
-                espectaculo_titulo.innerHTML = payasoDeFuego;
-                espectaculo_desc.innerHTML = payasoDeFuego_desc;
-                break;
-
-            case "Luna y Sol":
-                espectaculo_elegido.style.display = "flex";
-                espectaculo_titulo.innerHTML = lunaYSol;
-                espectaculo_desc.innerHTML = lunaYSol_desc;
-                break;
-
-            case "Equilibrio Supremo":
-                espectaculo_elegido.style.display = "flex";
-                espectaculo_titulo.innerHTML = equilibrioSupremo;
-                espectaculo_desc.innerHTML = equilibrioSupremo_desc;
-                break;
-
-            case "Los Voladores":
-                espectaculo_elegido.style.display = "flex";
-                espectaculo_titulo.innerHTML = losVoladores;
-                espectaculo_desc.innerHTML = losVoladores_desc;
-                break;
-
-            default:
-                espectaculo_elegido.style.display = "none";
-                break;
-        }
-    })
+    if(espectaculos) {
+        espectaculos.addEventListener("change", (e) => {
+            espectaculo = e.target.value;
+    
+            switch(e.target.value) {
+                case "Payaso de Fuego":
+                    espectaculo_elegido.style.display = "flex";
+                    espectaculo_titulo.innerHTML = payasoDeFuego;
+                    espectaculo_desc.innerHTML = payasoDeFuego_desc;
+                    break;
+    
+                case "Luna y Sol":
+                    espectaculo_elegido.style.display = "flex";
+                    espectaculo_titulo.innerHTML = lunaYSol;
+                    espectaculo_desc.innerHTML = lunaYSol_desc;
+                    break;
+    
+                case "Equilibrio Supremo":
+                    espectaculo_elegido.style.display = "flex";
+                    espectaculo_titulo.innerHTML = equilibrioSupremo;
+                    espectaculo_desc.innerHTML = equilibrioSupremo_desc;
+                    break;
+    
+                case "Los Voladores":
+                    espectaculo_elegido.style.display = "flex";
+                    espectaculo_titulo.innerHTML = losVoladores;
+                    espectaculo_desc.innerHTML = losVoladores_desc;
+                    break;
+    
+                default:
+                    espectaculo_elegido.style.display = "none";
+                    break;
+            }
+        })
+    }
 
     // VALIDACION FECHA CALENDARIO
     let hoy = new Date();
     hoy = hoy.getFullYear() + "-" + (hoy.getMonth() + 1) + "-" + hoy.getDate();
+    let date = document.getElementById("date");
 
-    document.getElementById("date").value = hoy;
-    document.getElementById("date").min = hoy;
+    if(date) {
+        date.value = hoy;
+        date.min = hoy;
+    }
 
     // VARIABLES Y VALIDACION DEL FORMULARIO
     const form = document.getElementById("form-entradas");
@@ -116,50 +151,52 @@ document.addEventListener("DOMContentLoaded", () => {
     const error = document.getElementById("form-error");
     const quantity4 = document.getElementById("quantity");
 
-    form.addEventListener("input", () => {
-        const city = document.getElementById("city").value;
-        const date = document.getElementById("date").value;
-        const time = document.getElementById("time").value;
-        const category = document.getElementById("category").value;
-        const quantity = document.getElementById("quantity").value;
-        const mail = document.getElementById("mail").value;
-
-        // SI SE SELECCIONA PACK FAMILIAR, SON 4 ENTRADAS AUTOMÁTICAMENTE
-        if(category == "Pack Familiar") {
-            quantity4.setAttribute("value", 4);
-            quantity4.setAttribute("min", 4);
-            quantity4.setAttribute("max", 4);
-        } else {
-            quantity4.setAttribute("value", 1);
-            quantity4.setAttribute("min", 1);
-            quantity4.setAttribute("max", 10);
-        }
-
-        if(espectaculo && city && date && category && quantity && time && mail) {
-            if(!soloNumeros(quantity)) {
-                error.innerHTML = "La cantidad de entradas debe ser entre 1 y 10";
-                submit.disabled = true;
-            } else if(!emailValido(mail)) {
-                error.innerText = "Ingrese una dirección de mail correcta";
-                submit.disabled = true;
+    if(form) {
+        form.addEventListener("input", () => {
+            const city = document.getElementById("city").value;
+            const date = document.getElementById("date").value;
+            const time = document.getElementById("time").value;
+            const category = document.getElementById("category").value;
+            const quantity = document.getElementById("quantity").value;
+            const mail = document.getElementById("mail").value;
+    
+            // SI SE SELECCIONA PACK FAMILIAR, SON 4 ENTRADAS AUTOMÁTICAMENTE
+            if(category == "Pack Familiar") {
+                quantity4.setAttribute("value", 4);
+                quantity4.setAttribute("min", 4);
+                quantity4.setAttribute("max", 4);
             } else {
-                error.innerText = "";
-                submit.disabled = false;
-                resumen.innerText = `Estas por comprar ${quantity} entrada/s de categoría ${category} para ver ${espectaculo} el ${date} las ${time}hs en nuestro teatro de ${city} ¿Querés continuar con la compra?`
+                quantity4.setAttribute("value", 1);
+                quantity4.setAttribute("min", 1);
+                quantity4.setAttribute("max", 10);
             }
-        }        
-    })
-
-    form.addEventListener("submit", (e) => {
-        e.preventDefault();
-
-        if(submit.innerText == "Ir a pagar") {
-            continuacion.style.display = "flex";
-        } else {
-            confirmacion.style.display = "flex";
-            window.scrollTo({ top: 830, behavior: 'smooth' });
-        }
-    })
+    
+            if(espectaculo && city && date && category && quantity && time && mail) {
+                if(!soloNumeros(quantity)) {
+                    error.innerHTML = "La cantidad de entradas debe ser entre 1 y 10";
+                    submit.disabled = true;
+                } else if(!emailValido(mail)) {
+                    error.innerText = "Ingrese una dirección de mail correcta";
+                    submit.disabled = true;
+                } else {
+                    error.innerText = "";
+                    submit.disabled = false;
+                    resumen.innerText = `Estas por comprar ${quantity} entrada/s de categoría ${category} para ver ${espectaculo} el ${date} las ${time}hs en nuestro teatro de ${city} ¿Querés continuar con la compra?`
+                }
+            }        
+        })
+    
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+    
+            if(submit.innerText == "Ir a pagar") {
+                continuacion.style.display = "flex";
+            } else {
+                confirmacion.style.display = "flex";
+                window.scrollTo({ top: 830, behavior: 'smooth' });
+            }
+        })
+    }
 
     if(btn_confirmacion && btn_arrepentimiento) {
         btn_confirmacion.addEventListener("click", () => {
@@ -173,18 +210,20 @@ document.addEventListener("DOMContentLoaded", () => {
         })
     }
 
-    discapacidad.addEventListener("change", (e) => {
-        if(e.target.checked) {
-            informacion_adicional.style.display = "block";
-            svg.style.display = "none";
-            submit.innerText = "Enviar confirmación al mail";
-
-        } else {
-            informacion_adicional.style.display = "none";
-            svg.style.display = "block";
-            submit.innerText = "Ir a pagar";
-        }
-    })
+    if(discapacidad) {
+        discapacidad.addEventListener("change", (e) => {
+            if(e.target.checked) {
+                informacion_adicional.style.display = "block";
+                svg.style.display = "none";
+                submit.innerText = "Enviar confirmación al mail";
+    
+            } else {
+                informacion_adicional.style.display = "none";
+                svg.style.display = "block";
+                submit.innerText = "Ir a pagar";
+            }
+        })
+    }
 });
 
 

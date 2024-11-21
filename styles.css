@@ -309,81 +309,16 @@ footer .logo img {
 
 
 /*CONTACTO */
-.contact {
-
-    padding-top: 80px;  /* Espacio adicional arriba */
+.contacto {
+    background-image: url("./Imagenes/world-theatre-day-celebration.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: "Mulish", sans-serif;
 }
 
-
-
-.contact-form label {
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-.contact-form input,
-.contact-form textarea {
-    margin-bottom: 15px;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    width: 100%;
-}
-
-.contact-form button {
-    padding: 10px;
-    font-size: 18px;
-    color: white;
-    background-color: #007BFF;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.contact-form button:hover {
-    background-color: #0056b3;
-}
-
-
-
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    max-width: 600px; /* Ancho máximo */
-    margin: 20px auto; /* Centrado y margen superior/inferior */
-    padding: 30px; /* Aumentar el padding para un fondo más grande */
-    background-color: #f4f4f4; /* Fondo gris claro */
-    border-radius: 8px; /* Bordes redondeados */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
-}
-
-
-.map-container {
-    margin: 20px auto;
-    text-align: center;
-}
-
-
-.contacto-descripcion {
-    text-align: center; /* Centra el texto */
-    color: black; /* Cambia el color del texto a negro */
-    background-color: #f0f0f0; /* Mantiene el fondo gris claro */
-    padding: 20px; /* Añade espacio interno */
-    border-radius: 10px; /* Opcional: esquinas redondeadas */
-    margin: 20px auto; /* Centra horizontalmente */
-    max-width: 600px; /* Limita el ancho */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Añade una sombra ligera */
-}
-
-.contacto-descripcion p {
-    margin-bottom: 10px; /* Espaciado entre el párrafo y la lista */
-}
-
-.contact-info {
-    list-style: none; /* Elimina los puntos de la lista */
-    padding: 0; /* Elimina el espacio interno de la lista */
+.contacto h1 {
+    font-family: "Rum Raisin", sans-serif;
+    letter-spacing: 3px;
 }
 
 
@@ -629,7 +564,7 @@ nav ul li a:hover {
 
 #map {
     width: 600px;
-    height: 500px;
+    height: 550px;
     border-radius: 20px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Sombra alrededor del mapa */
 }
@@ -654,7 +589,8 @@ nav ul li a:hover {
 }
 
 .form-inputs select,
-.form-inputs input {
+.form-inputs input,
+.form-inputs textarea {
     border-radius: 0.375rem;
     padding: 0.5rem;
     color: gray;

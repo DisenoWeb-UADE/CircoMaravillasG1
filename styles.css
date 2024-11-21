@@ -368,8 +368,9 @@ footer .logo img {
 
 
 /***Historia**/
+
 .historia {
-    position: relative; /* Para permitir posicionamiento absoluto de los elementos internos */
+    font-family: "Mulish", sans-serif;
 }
 
 .historia img {
@@ -392,15 +393,15 @@ footer .logo img {
 
 .breadcrumb-item a {
     text-decoration: none; /* Sin subrayado */
-    color: #007BFF; /* Color azul para enlaces */
+    color: #9ca3af; /* Color azul para enlaces */
 }
 
 .breadcrumb-item a:hover {
-    color: #0056b3; /* Azul más oscuro al pasar el cursor */
+    color: white; /* Azul más oscuro al pasar el cursor */
 }
 
 .breadcrumb-item.active {
-    color: #6c757d; /* Color gris para el texto activo */
+    color: #9ca3af; /* Color gris para el texto activo */
 }
 .Historia {
     background-color: #FF4500; /* Fondo gris claro */
@@ -476,6 +477,7 @@ footer .logo img {
     overflow: hidden; /* Evita que haya barras de desplazamiento */
 
     padding-top: 100px;  /* Espacio adicional arriba */
+    font-family: "Mulish", sans-serif;
 }
 .faq-background {
     width: 100%; /* Hacer que la imagen de fondo cubra el contenedor */
@@ -600,7 +602,8 @@ nav ul li a:hover {
     border-top-right-radius: 20px;
 }
 
-.espectaculo-elegido h1 {
+.espectaculo-elegido h1,
+.titulo {
     font-family: "Rum Raisin", sans-serif;
 }
 

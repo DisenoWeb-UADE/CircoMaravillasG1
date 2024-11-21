@@ -29,7 +29,7 @@
                     <a href="entradas.html" class="block py-2 px-3 md:p-0 text-white rounded md:border-0 border-b-2 border-white">Entradas</a>
                   </li>
                   <li>
-                    <a href="historia.html" class="block py-2 px-3 md:p-0 rounded md:border-0 text-white border-b-2 border-white">Nosotros</a>
+                    <a href="historia.html" class="block py-2 px-3 md:p-0 rounded md:border-0 text-white border-b-2 border-white">Historia</a>
                   </li>
                   <li>
                     <a href="contacto.html" class="block py-2 px-3 md:p-0 rounded md:border-0 text-red-700 border-b-2 border-white">Contacto</a>
@@ -48,14 +48,30 @@
 
     <main>
       <section class="contacto h-fit pb-10">
-        <nav aria-label="breadcrumb">
-          <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Contacto</li>
-          </ol>
-        </nav>
+        <div class="pt-32 px-5">
+          <nav class="flex px-5 py-3 text-gray-700 rounded-lg bg-black/75 w-fit mb-0" aria-label="Breadcrumb">
+            <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
+            <li class="inline-flex items-center">
+                <a  href="index.html" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white">
+                <svg class="w-3 h-3 me-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z"/>
+                </svg>
+                Inicio
+                </a>
+            </li>
+            <li aria-current="page">
+                <div class="flex items-center">
+                <svg class="rtl:rotate-180 block w-3 h-3 mx-1 text-gray-400 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                </svg>
+                <a href="#" class="ms-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ms-2 dark:text-gray-400 dark:hover:text-white">Contacto</a>
+                </div>
+            </li>
+            </ol>
+          </nav>
+        </div>
 
-        <div class="pt-60 px-16">
+        <div class="pt-24 px-16">
           <div class="bg-red-950/85 mx-auto pb-5 rounded-lg md:rounded-tr-[4.5rem]">
             <h1 class="bg-[#cca352] text-right w-fit justify-self-end text-4xl text-white font-bold md:rounded-tr-full rounded-bl-full mb-5 px-10 md:px-48 py-2">Contacto</h1>
             <form id="contact-form" class="flex flex-col rounded-xl text-left gap-5 py-16">

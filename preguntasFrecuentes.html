@@ -37,7 +37,7 @@
                     <a href="entradas.html" class="block py-2 px-3 text-white rounded border-b-2 border-white md:border-0 md:p-0">Entradas</a>
                   </li>
                   <li>
-                    <a href="historia.html" class="block py-2 px-3 text-white rounded border-b-2 border-white md:border-0 md:p-0">Nosotros</a>
+                    <a href="historia.html" class="block py-2 px-3 text-white rounded border-b-2 border-white md:border-0 md:p-0">Historia</a>
                   </li>
                   <li>
                     <a href="contacto.html" class="block py-2 px-3 text-white rounded border-b-2 border-white md:border-0 md:p-0">Contacto</a>
@@ -57,122 +57,131 @@
     <main>
         
 
-        <section class="faq-section">
+        <section class="faq-section h-fit pb-10">
         <img src="Imagenes/FONDO_CORTINAS.jpg" alt="Imagen de fondo del circo">
-                    <!-- Breadcrumb -->
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Preguntas Frecuentes</li>
+
+        <nav class="flex px-5 m-3 mb-4 py-3 text-gray-700 rounded-lg bg-black/75 w-fit md:mb-0" aria-label="Breadcrumb">
+            <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
+                <li class="inline-flex items-center">
+                    <a  href="index.html" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white">
+                    <svg class="w-3 h-3 me-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z"/>
+                    </svg>
+                    Inicio
+                    </a>
+                </li>
+                <li aria-current="page">
+                    <div class="flex items-center">
+                    <svg class="rtl:rotate-180 block w-3 h-3 mx-1 text-gray-400 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                    </svg>
+                    <a href="#" class="ms-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ms-2 dark:text-gray-400 dark:hover:text-white">Preguntas Frecuentes</a>
+                    </div>
+                </li>
             </ol>
-         </nav>
-        <h1 class="text-center">Preguntas Frecuentes</h1>
+        </nav>
+        <h1 class="titulo text-center text-3xl mb-0">Preguntas Frecuentes</h1>
 
-            <div class="accordion" id="faqAccordion">
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingOne">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            ¿Qué edad se necesita para asistir al circo?
-                        </button>
-                    </h2>
-                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            No hay una edad mínima para asistir a nuestros espectáculos. Sin embargo, recomendamos que los niños menores de 3 años se sienten en el regazo de un adulto para disfrutar de la experiencia.
-                        </div>
-                    </div>
-                </div>
+        <div x-data="{ active: null }" class="max-w-4xl mx-auto mt-0 p-4 h-fit">
+            <div class="space-y-0">
 
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingTwo">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            ¿Dónde se realizan las funciones del Circo Maravillas?
-                        </button>
-                    </h2>
-                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Nuestros espectáculos se llevan a cabo en diferentes ciudades. Para conocer la ubicación exacta y la fecha de los próximos espectáculos, visita nuestra sección de <a href="espectaculos.html">Espectáculos</a>.
-                        </div>
-                    </div>
+              <div class="border-none">
+                <button @click="active = (active === 1 ? null : 1)" class="w-full flex justify-between items-center p-3 text-left text-black font-bold bg-[#cca352] border-b-2 border-[#9b7c3f]">
+                  ¿Qué edad se necesita para asistir al circo?
+                  <span :class="{ 'rotate-180': active === 1 }" class="transition-transform transform">
+                    &#9662;
+                  </span>
+                </button>
+                <div x-show="active === 1" class="p-4 bg-gradient-to-r from-red-800 to-red-950 text-white" x-transition>
+                  No hay una edad mínima para asistir a nuestros espectáculos. Sin embargo, recomendamos que los niños menores de 3 años se sienten en el regazo de un adulto para disfrutar de la experiencia.
                 </div>
+              </div>
 
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingThree">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            ¿Puedo comprar entradas en la taquilla?
-                        </button>
-                    </h2>
-                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Sí, las entradas se pueden comprar en la taquilla el día del espectáculo, siempre y cuando haya disponibilidad. Sin embargo, recomendamos comprar las entradas con anticipación en nuestro sitio web para asegurar tu lugar.
-                        </div>
-                    </div>
+              <div class="border-none">
+                <button @click="active = (active === 2 ? null : 2)" class="w-full flex justify-between items-center p-3 text-left text-black font-bold bg-[#cca352] border-b-2 border-[#9b7c3f]">
+                  ¿Dónde se realizan las funciones del Circo Maravillas?
+                  <span :class="{ 'rotate-180': active === 2 }" class="transition-transform transform">
+                    &#9662;
+                  </span>
+                </button>
+                <div x-show="active === 2" class="p-4 bg-gradient-to-r from-red-800 to-red-950 text-white" x-transition>
+                  Nuestros espectáculos se llevan a cabo en diferentes ciudades. Para conocer la ubicación exacta y la fecha de los próximos espectáculos, visita nuestra sección de Espectáculos.
                 </div>
+              </div>
 
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingFour">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                            ¿Hay opciones de comida y bebida en el espectáculo?
-                        </button>
-                    </h2>
-                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Sí, ofrecemos una variedad de opciones de comida y bebida en nuestro recinto. También puedes disfrutar de snacks y refrescos durante el espectáculo.
-                        </div>
-                    </div>
+              <div class="border-none">
+                <button @click="active = (active === 3 ? null : 3)" class="w-full flex justify-between items-center p-3 text-left text-black font-bold bg-[#cca352] border-b-2 border-[#9b7c3f]">
+                  ¿Puedo comprar entradas en la taquilla?
+                  <span :class="{ 'rotate-180': active === 3 }" class="transition-transform transform">
+                    &#9662;
+                  </span>
+                </button>
+                <div x-show="active === 3" class="p-4 bg-gradient-to-r from-red-800 to-red-950 text-white" x-transition>
+                  Sí, las entradas se pueden comprar en la taquilla el día del espectáculo, siempre y cuando haya disponibilidad. Sin embargo, recomendamos comprar las entradas con anticipación en nuestro sitio web para asegurar tu lugar.
                 </div>
+              </div>
 
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingFive">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                            ¿El circo es accesible para personas con discapacidades?
-                        </button>
-                    </h2>
-                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            ¡Sí! El Circo Maravillas se esfuerza por ser un espacio inclusivo. Contamos con accesos y servicios adecuados para personas con discapacidades. Si necesitas asistencia, no dudes en contactarnos.
-                        </div>
-                    </div>
+              <div class="border-none">
+                <button @click="active = (active === 4 ? null : 4)" class="w-full flex justify-between items-center p-3 text-left text-black font-bold bg-[#cca352] border-b-2 border-[#9b7c3f]">
+                    ¿Hay opciones de comida y bebida en el espectáculo?
+                  <span :class="{ 'rotate-180': active === 4 }" class="transition-transform transform">
+                    &#9662;
+                  </span>
+                </button>
+                <div x-show="active === 4" class="p-4 bg-gradient-to-r from-red-800 to-red-950 text-white" x-transition>
+                    Sí, ofrecemos una variedad de opciones de comida y bebida en nuestro recinto. También puedes disfrutar de snacks y refrescos durante el espectáculo.
                 </div>
+              </div>
 
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingSix">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                            ¿Qué debo hacer si he perdido un objeto en el espectáculo?
-                        </button>
-                    </h2>
-                    <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Si has perdido un objeto, por favor dirígete a nuestro equipo de seguridad al final del espectáculo. También puedes comunicarte con nuestro servicio al cliente a través de la sección de <a href="contacto.html">Contacto</a>.
-                        </div>
-                    </div>
+              <div class="border-none">
+                <button @click="active = (active === 5 ? null : 5)" class="w-full flex justify-between items-center p-3 text-left text-black font-bold bg-[#cca352] border-b-2 border-[#9b7c3f]">
+                  ¿El circo es accesible para personas con discapacidades?
+                  <span :class="{ 'rotate-180': active === 5 }" class="transition-transform transform">
+                    &#9662;
+                  </span>
+                </button>
+                <div x-show="active === 5" class="p-4 bg-gradient-to-r from-red-800 to-red-950 text-white" x-transition>
+                    ¡Sí! El Circo Maravillas se esfuerza por ser un espacio inclusivo. Contamos con accesos y servicios adecuados para personas con discapacidades. Si necesitas asistencia, no dudes en contactarnos.
                 </div>
+              </div>
 
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingSeven">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
-                            ¿Se permiten fotos y videos durante el espectáculo?
-                        </button>
-                    </h2>
-                    <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Para no afectar la experiencia de los demás espectadores y a nuestros artistas, no se permite tomar fotos ni videos durante el espectáculo. Sin embargo, puedes capturar recuerdos antes y después de la función.
-                        </div>
-                    </div>
+              <div class="border-none">
+                <button @click="active = (active === 6 ? null : 6)" class="w-full flex justify-between items-center p-3 text-left text-black font-bold bg-[#cca352] border-b-2 border-[#9b7c3f]">
+                  ¿Qué debo hacer si he perdido un objeto en el espectáculo?
+                  <span :class="{ 'rotate-180': active === 6 }" class="transition-transform transform">
+                    &#9662;
+                  </span>
+                </button>
+                <div x-show="active === 6" class="p-4 bg-gradient-to-r from-red-800 to-red-950 text-white" x-transition>
+                    Si has perdido un objeto, por favor dirígete a nuestro equipo de seguridad al final del espectáculo. También puedes comunicarte con nuestro servicio al cliente a través de la sección de Contacto.
                 </div>
+              </div>
 
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingEight">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
-                            ¿Cómo puedo trabajar con el Circo Maravillas?
-                        </button>
-                    </h2>
-                    <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Siempre estamos en búsqueda de talento. Puedes enviar tu currículum a través de nuestra sección de <a href="contacto.html">Contacto</a> y estaremos encantados de revisarlo.
-                        </div>
-                    </div>
+              <div class="border-none">
+                <button @click="active = (active === 7 ? null : 7)" class="w-full flex justify-between items-center p-3 text-left text-black font-bold bg-[#cca352] border-b-2 border-[#9b7c3f]">
+                  ¿Se permiten fotos y videos durante el espectáculo?
+                  <span :class="{ 'rotate-180': active === 7 }" class="transition-transform transform">
+                    &#9662;
+                  </span>
+                </button>
+                <div x-show="active === 7" class="p-4 bg-gradient-to-r from-red-800 to-red-950 text-white" x-transition>
+                    Para no afectar la experiencia de los demás espectadores y a nuestros artistas, no se permite tomar fotos ni videos durante el espectáculo. Sin embargo, puedes capturar recuerdos antes y después de la función.
                 </div>
+              </div>
+
+              <div class="border-none">
+                <button @click="active = (active === 8 ? null : 8)" class="w-full flex justify-between items-center p-3 text-left text-black font-bold bg-[#cca352] border-b-2 border-[#9b7c3f]">
+                  ¿Cómo puedo trabajar con el Circo Maravillas?
+                  <span :class="{ 'rotate-180': active === 8 }" class="transition-transform transform">
+                    &#9662;
+                  </span>
+                </button>
+                <div x-show="active === 8" class="p-4 bg-gradient-to-r from-red-800 to-red-950 text-white" x-transition>
+                    Siempre estamos en búsqueda de talento. Puedes enviar tu currículum a través de nuestra sección de Contacto y estaremos encantados de revisarlo.
+                </div>
+              </div>
             </div>
+          </div>
         </section>
     </main>
     
@@ -192,5 +201,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </body>
 </html>
